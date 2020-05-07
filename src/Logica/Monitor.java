@@ -12,13 +12,9 @@ package Logica;
 public class Monitor extends Thread {
 
     private String identificación;
-    private Atracciones atraccion;
-    private Parque parque;
 
-    public Monitor(String identificación, Atracciones atraccion, Parque parque) {
+    public Monitor(String identificación) {
         this.identificación = identificación;
-        this.atraccion = atraccion;
-        this.parque = parque;
     }
 
     public String getIdentificación() {
@@ -29,56 +25,56 @@ public class Monitor extends Thread {
         this.identificación = identificación;
     }
 
-    public Atracciones getAtraccion() {
-        return atraccion;
-    }
-
-    public void setAtraccion(Atracciones atraccion) {
-        this.atraccion = atraccion;
-    }
-
-    public Parque getParque() {
-        return parque;
-    }
-
-    public void setParque(Parque parque) {
-        this.parque = parque;
-    }
-
-    public boolean directrices(Visitante visitante, String atraccion) {
+    public boolean directrices(Visitante visitante, Atracciones atraccion) {
+        boolean tienePermiso = false;
 
         try {
-            switch (atraccion) {
+            switch (atraccion.getNombre()) {
                 case "Vestuario":
                     sleep(1000);
-                    return true;
+                    if (atraccion.getAforo() < 30) {
+                        tienePermiso = true;
+                    }
+                    visitante.setTiempoEspera(3000);
+                    break;
                 case "Piscina de olas":
                     sleep(1000);
-                    return true;
+                    if (atraccion.getAforo() < 20 && visitante.getEdad() > 5) {
+                        tienePermiso = true;
+                    }
+                    break;
                 case "Piscina de ninos":
                     sleep((int) (1000 + 500 * Math.random()));
-                    return true;
+                    break;
                 case "Piscina grande":
                     sleep((int) (500 * Math.random()));
-                    return true;
+                    break;
                 case "Tumbonas":
                     sleep((int) (500 + 400 * Math.random()));
-                    return true;
+                    break;
                 case "Tobogan A":
                     sleep((int) (400 + 100 * Math.random()));
-                    return true;
+                    break;
                 case "Tobogan B":
                     sleep((int) (400 + 100 * Math.random()));
-                    return true;
+                    break;
                 case "Tobogan C":
                     sleep((int) (400 + 100 * Math.random()));
-                    return true;
+                    break;
+                default:
+                    tienePermiso = false;
+                    break;
             }
-        } catch (Exception e) {
+        } catch (InterruptedException e) {
 
         }
-        return false;
 
+        return tienePermiso;
     }
 
+    @Override
+    public void run() {
+        while (true) {
+        }
+    }
 }

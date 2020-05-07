@@ -43,7 +43,7 @@ public class Atracciones {
             semaforo.acquire();
             visitante.setCansancio(visitante.getCansancio() + 1);
             colaEspera.extraer(visitante);
-            if (this.monitor.directrices(visitante, this.getNombre())) {
+            if (this.monitor.directrices(visitante, this)) {
                 dentro.insertar(visitante);
             } else {
                 semaforo.release();
@@ -68,6 +68,14 @@ public class Atracciones {
     
     public void setDetenido(boolean detenido) {
         this.detenido = detenido;
+    }
+
+    public int getAforo() {
+        return aforo;
+    }
+
+    public void setAforo(int aforo) {
+        this.aforo = aforo;
     }
     
     public synchronized void detener() {

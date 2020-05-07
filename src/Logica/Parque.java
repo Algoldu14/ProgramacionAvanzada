@@ -66,7 +66,7 @@ public class Parque {
     }
 
     public synchronized void parar() {
-        if (this.detenido == true) {
+        if (detenido) {
             try {
                 wait();
             } catch (InterruptedException ex) {
