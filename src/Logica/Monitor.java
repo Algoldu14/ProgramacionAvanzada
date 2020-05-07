@@ -45,35 +45,40 @@ public class Monitor extends Thread {
         this.parque = parque;
     }
 
-    public void directrices() {
+    public boolean directrices(Visitante visitante, String atraccion) {
 
-        switch (this.atraccion.getNombre()) {
-            case "Vestuario":
-                
-                break;
-            case "Piscina de olas":
-                
-                break;
-            case "Piscina de ninos":
-                
-                break;
-            case "Piscina grande":
-                
-                break;
-            case "Tumbonas":
-                
-                break;
-            case "Tobogan A":
-                
-                break;
-            case "Tobogan B":
-                
-                break;
-            case "Tobogan C":
-                
-                break;
+        try {
+            switch (atraccion) {
+                case "Vestuario":
+                    sleep(1000);
+                    return true;
+                case "Piscina de olas":
+                    sleep(1000);
+                    return true;
+                case "Piscina de ninos":
+                    sleep((int) (1000 + 500 * Math.random()));
+                    return true;
+                case "Piscina grande":
+                    sleep((int) (500 * Math.random()));
+                    return true;
+                case "Tumbonas":
+                    sleep((int) (500 + 400 * Math.random()));
+                    return true;
+                case "Tobogan A":
+                    sleep((int) (400 + 100 * Math.random()));
+                    return true;
+                case "Tobogan B":
+                    sleep((int) (400 + 100 * Math.random()));
+                    return true;
+                case "Tobogan C":
+                    sleep((int) (400 + 100 * Math.random()));
+                    return true;
+            }
+        } catch (Exception e) {
+
         }
+        return false;
+
     }
-    
-    
+
 }

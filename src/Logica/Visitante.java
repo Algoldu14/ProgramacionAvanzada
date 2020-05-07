@@ -15,10 +15,10 @@ public class Visitante extends Thread {
     private Parque parque;
     private int cansancio;
 
-    public Visitante(String identificacion, Parque parque, int cansancio) {
+    public Visitante(String identificacion, Parque parque) {
         this.identificacion = identificacion;
         this.parque = parque;
-        this.cansancio = cansancio;
+        this.cansancio = 0;
     }
 
     public String getIdentificacion() {
@@ -44,7 +44,24 @@ public class Visitante extends Thread {
     public void setCansancio(int cansancio) {
         this.cansancio = cansancio;
     }
-    
-    
-    
+
+    @Override
+    public void run() {
+
+        parque.entrarP(this);
+
+        while (true) {
+
+            if (this.cansancio >= (5 + (int) (Math.random() * 10))) {//Accede a entre 5 y 15 atracciones
+                parque.salir(this); //Sale del parque
+                break;
+
+            } else {
+                parque.atraccionar(this, parque.cogerAtraccion());
+            }
+
+        }
+
+    }
+
 }
