@@ -20,10 +20,11 @@ public class Atracciones {
     private Monitor monitor;
     private ListaHilos colaEspera;
     private ListaHilos dentro;
+    private ListaHilos puesto;
     private Semaphore semaforo;
     private boolean detenido;
 
-    public Atracciones(String nombre, int aforo, int t_disfrute, int t_disfruteAlea, JTextField tfEspera, JTextField tfDentro, Monitor monitor, boolean detenido) {
+    public Atracciones(String nombre, int aforo, int t_disfrute, int t_disfruteAlea, JTextField tfEspera, JTextField tfDentro, JTextField puesto, Monitor monitor, boolean detenido) {
         this.nombre = nombre;
         this.aforo = aforo;
         this.t_disfrute = t_disfrute;
@@ -32,6 +33,7 @@ public class Atracciones {
         this.semaforo = new Semaphore(aforo, true);
         this.dentro = new ListaHilos(tfDentro);
         this.colaEspera = new ListaHilos(tfEspera);
+        this.puesto = new ListaHilos(tfEspera);
         this.detenido = detenido;
     }
 
