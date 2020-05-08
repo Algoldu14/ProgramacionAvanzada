@@ -5,7 +5,6 @@
  */
 package Logica;
 
-import java.lang.System.Logger;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.concurrent.Semaphore;

@@ -82,7 +82,7 @@ public class Atracciones {
         if (this.detenido == true) {
             try {
                 wait();
-            } catch (InterruptedException ex) {
+            } catch (InterruptedException e) {
                 
             }
         }
