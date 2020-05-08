@@ -28,37 +28,680 @@ public class VentanaPrin extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        colaParque = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        colaVestuarios = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        monitorVestuarios = new javax.swing.JTextField();
+        visitantesVestuarios = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        colaPiscinaNinos = new javax.swing.JTextField();
+        monitorPiscinaNinos = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        visitantesPiscinaNinos = new javax.swing.JTextField();
+        esperaAdultosPiscinaNinos = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        colaPiscinaOlas = new javax.swing.JTextField();
+        monitorPiscinaOlas = new javax.swing.JTextField();
+        visitantesPiscinaOlas = new javax.swing.JTextField();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        colaPiscinaGran = new javax.swing.JTextField();
+        monitorPiscinaGran = new javax.swing.JTextField();
+        visitantesPiscinaGran = new javax.swing.JTextField();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        colaTumbonas = new javax.swing.JTextField();
+        monitorTumbonas = new javax.swing.JTextField();
+        visitantesTumbonas = new javax.swing.JTextField();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        colaToboganes = new javax.swing.JTextField();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        monitorToboganA = new javax.swing.JTextField();
+        visitanteToboganA = new javax.swing.JTextField();
+        jLabel31 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
+        monitorToboganB = new javax.swing.JTextField();
+        visitanteToboganB = new javax.swing.JTextField();
+        jLabel33 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
+        monitorToboganC = new javax.swing.JTextField();
+        visitanteToboganC = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jLabel1.setText("Cola de entrada:");
 
-        jTextField1.setText("jTextField1");
+        colaParque.setEditable(false);
+        colaParque.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                colaParqueActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        jLabel2.setText("PARQUE ACUÁTICO");
+
+        jLabel3.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel3.setText("VESTUARIOS");
+
+        jLabel4.setText("Cola de entrada:");
+
+        colaVestuarios.setEditable(false);
+        colaVestuarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                colaVestuariosActionPerformed(evt);
+            }
+        });
+
+        jLabel5.setText("Monitor:");
+
+        jLabel6.setText("Vestuarios:");
+
+        monitorVestuarios.setEditable(false);
+        monitorVestuarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                monitorVestuariosActionPerformed(evt);
+            }
+        });
+
+        visitantesVestuarios.setEditable(false);
+        visitantesVestuarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                visitantesVestuariosActionPerformed(evt);
+            }
+        });
+
+        jLabel7.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel7.setText("PISCINA DE NIÑOS");
+
+        jLabel8.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel8.setText("PISCINA DE OLAS");
+
+        jLabel9.setText("Cola de entrada:");
+
+        jLabel10.setText("Monitor:");
+
+        colaPiscinaNinos.setEditable(false);
+        colaPiscinaNinos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                colaPiscinaNinosActionPerformed(evt);
+            }
+        });
+
+        monitorPiscinaNinos.setEditable(false);
+        monitorPiscinaNinos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                monitorPiscinaNinosActionPerformed(evt);
+            }
+        });
+
+        jLabel11.setText("Piscina de niños:");
+
+        jLabel12.setText("Espera adultos:");
+
+        visitantesPiscinaNinos.setEditable(false);
+        visitantesPiscinaNinos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                visitantesPiscinaNinosActionPerformed(evt);
+            }
+        });
+
+        esperaAdultosPiscinaNinos.setEditable(false);
+        esperaAdultosPiscinaNinos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                esperaAdultosPiscinaNinosActionPerformed(evt);
+            }
+        });
+
+        jLabel13.setText("Cola de entrada:");
+
+        jLabel14.setText("Monitor:");
+
+        jLabel15.setText("Piscina de olas:");
+
+        colaPiscinaOlas.setEditable(false);
+        colaPiscinaOlas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                colaPiscinaOlasActionPerformed(evt);
+            }
+        });
+
+        monitorPiscinaOlas.setEditable(false);
+        monitorPiscinaOlas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                monitorPiscinaOlasActionPerformed(evt);
+            }
+        });
+
+        visitantesPiscinaOlas.setEditable(false);
+        visitantesPiscinaOlas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                visitantesPiscinaOlasActionPerformed(evt);
+            }
+        });
+
+        jLabel16.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel16.setText("PISCINA GRANDE");
+
+        jLabel17.setText("Cola de entrada:");
+
+        jLabel18.setText("Monitor:");
+
+        jLabel19.setText("Piscina grande:");
+
+        colaPiscinaGran.setEditable(false);
+        colaPiscinaGran.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                colaPiscinaGranActionPerformed(evt);
+            }
+        });
+
+        monitorPiscinaGran.setEditable(false);
+        monitorPiscinaGran.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                monitorPiscinaGranActionPerformed(evt);
+            }
+        });
+
+        visitantesPiscinaGran.setEditable(false);
+        visitantesPiscinaGran.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                visitantesPiscinaGranActionPerformed(evt);
+            }
+        });
+
+        jLabel20.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel20.setText("TUMBONAS");
+
+        jLabel21.setText("Cola de entrada:");
+
+        jLabel22.setText("Monitor:");
+
+        jLabel23.setText("Tumbonas:");
+
+        colaTumbonas.setEditable(false);
+        colaTumbonas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                colaTumbonasActionPerformed(evt);
+            }
+        });
+
+        monitorTumbonas.setEditable(false);
+        monitorTumbonas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                monitorTumbonasActionPerformed(evt);
+            }
+        });
+
+        visitantesTumbonas.setEditable(false);
+        visitantesTumbonas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                visitantesTumbonasActionPerformed(evt);
+            }
+        });
+
+        jLabel24.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel24.setText("TOBOGANES");
+
+        jLabel25.setText("Cola de entrada:");
+
+        colaToboganes.setEditable(false);
+        colaToboganes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                colaToboganesActionPerformed(evt);
+            }
+        });
+
+        jLabel26.setText("TOBOGAN A");
+
+        jLabel27.setText("TOBOGAN B");
+
+        jLabel28.setText("TOBOGAN C");
+
+        jLabel29.setText("Monitor:");
+
+        jLabel30.setText("Tobogán:");
+
+        monitorToboganA.setEditable(false);
+        monitorToboganA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                monitorToboganAActionPerformed(evt);
+            }
+        });
+
+        visitanteToboganA.setEditable(false);
+        visitanteToboganA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                visitanteToboganAActionPerformed(evt);
+            }
+        });
+
+        jLabel31.setText("Monitor:");
+
+        jLabel32.setText("Tobogán:");
+
+        monitorToboganB.setEditable(false);
+        monitorToboganB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                monitorToboganBActionPerformed(evt);
+            }
+        });
+
+        visitanteToboganB.setEditable(false);
+        visitanteToboganB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                visitanteToboganBActionPerformed(evt);
+            }
+        });
+
+        jLabel33.setText("Monitor:");
+
+        jLabel34.setText("Tobogán:");
+
+        monitorToboganC.setEditable(false);
+        monitorToboganC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                monitorToboganCActionPerformed(evt);
+            }
+        });
+
+        visitanteToboganC.setEditable(false);
+        visitanteToboganC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                visitanteToboganCActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 752, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(38, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel17)
+                                    .addComponent(jLabel19))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jLabel30)
+                                            .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(monitorToboganA, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(visitanteToboganA, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(84, 84, 84)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGap(6, 6, 6)
+                                                .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(jLabel32))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(monitorToboganB)
+                                            .addComponent(visitanteToboganB, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(36, 36, 36)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                .addComponent(jLabel34)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(visitanteToboganC, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGap(6, 6, 6)
+                                                .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(monitorToboganC, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGap(6, 6, 6)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(monitorPiscinaGran, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(visitantesPiscinaGran, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(colaPiscinaGran, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGap(10, 10, 10)
+                                                .addComponent(visitantesPiscinaNinos, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGap(25, 25, 25)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                    .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(jLabel21)
+                                                    .addComponent(jLabel23))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(visitantesTumbonas)
+                                                    .addComponent(colaTumbonas)
+                                                    .addGroup(layout.createSequentialGroup()
+                                                        .addComponent(monitorTumbonas, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addGap(0, 0, Short.MAX_VALUE))))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                    .addComponent(jLabel13)
+                                                    .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(jLabel15))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(visitantesPiscinaOlas)
+                                                    .addGroup(layout.createSequentialGroup()
+                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                            .addComponent(monitorPiscinaOlas, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                            .addComponent(colaPiscinaOlas, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                        .addGap(0, 0, Short.MAX_VALUE))))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addGroup(layout.createSequentialGroup()
+                                                        .addGap(84, 84, 84)
+                                                        .addComponent(jLabel20))
+                                                    .addGroup(layout.createSequentialGroup()
+                                                        .addGap(90, 90, 90)
+                                                        .addComponent(jLabel8)))
+                                                .addGap(165, 165, 165))))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(73, 73, 73)
+                                .addComponent(jLabel16))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel11)
+                                    .addComponent(jLabel12))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(esperaAdultosPiscinaNinos, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel9)
+                                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(colaPiscinaNinos, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(monitorPiscinaNinos, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(68, 68, 68)
+                                .addComponent(jLabel7))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(320, 320, 320)
+                        .addComponent(jLabel2))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(379, 379, 379)
+                        .addComponent(jLabel3))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(366, 366, 366)
+                        .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel6))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(monitorVestuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(colaVestuarios)
+                            .addComponent(visitantesVestuarios)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(colaParque, javax.swing.GroupLayout.PREFERRED_SIZE, 735, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(141, 141, 141)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel26)
+                                .addGap(177, 177, 177)
+                                .addComponent(jLabel27)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel28))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel25)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(colaToboganes, javax.swing.GroupLayout.PREFERRED_SIZE, 447, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(85, 85, 85)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(2, 2, 2)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(484, Short.MAX_VALUE))
+                    .addComponent(colaParque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(14, 14, 14)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(colaVestuarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(monitorVestuarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(visitantesVestuarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel7)
+                        .addGap(8, 8, 8)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel9)
+                            .addComponent(colaPiscinaNinos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel10)
+                            .addComponent(monitorPiscinaNinos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel11)
+                            .addComponent(visitantesPiscinaNinos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel12)
+                            .addComponent(esperaAdultosPiscinaNinos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel16)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel17)
+                            .addComponent(colaPiscinaGran, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel18)
+                            .addComponent(monitorPiscinaGran, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel19)
+                            .addComponent(visitantesPiscinaGran, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel8)
+                        .addGap(8, 8, 8)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel13)
+                            .addComponent(colaPiscinaOlas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel14)
+                            .addComponent(monitorPiscinaOlas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel15)
+                            .addComponent(visitantesPiscinaOlas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel20)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel21)
+                            .addComponent(colaTumbonas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel22)
+                            .addComponent(monitorTumbonas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel23)
+                            .addComponent(visitantesTumbonas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel24)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel25)
+                            .addComponent(colaToboganes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel26)
+                            .addComponent(jLabel27)
+                            .addComponent(jLabel28))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel29)
+                            .addComponent(monitorToboganA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel31)
+                            .addComponent(monitorToboganB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(visitanteToboganA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel32)
+                            .addComponent(jLabel30)
+                            .addComponent(visitanteToboganB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel33)
+                            .addComponent(monitorToboganC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel34)
+                            .addComponent(visitanteToboganC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(46, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void colaVestuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_colaVestuariosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_colaVestuariosActionPerformed
+
+    private void colaParqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_colaParqueActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_colaParqueActionPerformed
+
+    private void visitantesPiscinaOlasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_visitantesPiscinaOlasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_visitantesPiscinaOlasActionPerformed
+
+    private void monitorVestuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_monitorVestuariosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_monitorVestuariosActionPerformed
+
+    private void visitantesVestuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_visitantesVestuariosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_visitantesVestuariosActionPerformed
+
+    private void colaPiscinaNinosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_colaPiscinaNinosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_colaPiscinaNinosActionPerformed
+
+    private void monitorPiscinaNinosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_monitorPiscinaNinosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_monitorPiscinaNinosActionPerformed
+
+    private void visitantesPiscinaNinosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_visitantesPiscinaNinosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_visitantesPiscinaNinosActionPerformed
+
+    private void esperaAdultosPiscinaNinosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_esperaAdultosPiscinaNinosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_esperaAdultosPiscinaNinosActionPerformed
+
+    private void colaPiscinaOlasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_colaPiscinaOlasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_colaPiscinaOlasActionPerformed
+
+    private void monitorPiscinaOlasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_monitorPiscinaOlasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_monitorPiscinaOlasActionPerformed
+
+    private void colaPiscinaGranActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_colaPiscinaGranActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_colaPiscinaGranActionPerformed
+
+    private void monitorPiscinaGranActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_monitorPiscinaGranActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_monitorPiscinaGranActionPerformed
+
+    private void visitantesPiscinaGranActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_visitantesPiscinaGranActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_visitantesPiscinaGranActionPerformed
+
+    private void colaTumbonasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_colaTumbonasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_colaTumbonasActionPerformed
+
+    private void monitorTumbonasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_monitorTumbonasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_monitorTumbonasActionPerformed
+
+    private void visitantesTumbonasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_visitantesTumbonasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_visitantesTumbonasActionPerformed
+
+    private void colaToboganesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_colaToboganesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_colaToboganesActionPerformed
+
+    private void monitorToboganAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_monitorToboganAActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_monitorToboganAActionPerformed
+
+    private void visitanteToboganAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_visitanteToboganAActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_visitanteToboganAActionPerformed
+
+    private void monitorToboganBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_monitorToboganBActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_monitorToboganBActionPerformed
+
+    private void visitanteToboganBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_visitanteToboganBActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_visitanteToboganBActionPerformed
+
+    private void monitorToboganCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_monitorToboganCActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_monitorToboganCActionPerformed
+
+    private void visitanteToboganCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_visitanteToboganCActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_visitanteToboganCActionPerformed
 
     /**
      * @param args the command line arguments
@@ -96,7 +739,63 @@ public class VentanaPrin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField colaParque;
+    private javax.swing.JTextField colaPiscinaGran;
+    private javax.swing.JTextField colaPiscinaNinos;
+    private javax.swing.JTextField colaPiscinaOlas;
+    private javax.swing.JTextField colaToboganes;
+    private javax.swing.JTextField colaTumbonas;
+    private javax.swing.JTextField colaVestuarios;
+    private javax.swing.JTextField esperaAdultosPiscinaNinos;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JTextField monitorPiscinaGran;
+    private javax.swing.JTextField monitorPiscinaNinos;
+    private javax.swing.JTextField monitorPiscinaOlas;
+    private javax.swing.JTextField monitorToboganA;
+    private javax.swing.JTextField monitorToboganB;
+    private javax.swing.JTextField monitorToboganC;
+    private javax.swing.JTextField monitorTumbonas;
+    private javax.swing.JTextField monitorVestuarios;
+    private javax.swing.JTextField visitanteToboganA;
+    private javax.swing.JTextField visitanteToboganB;
+    private javax.swing.JTextField visitanteToboganC;
+    private javax.swing.JTextField visitantesPiscinaGran;
+    private javax.swing.JTextField visitantesPiscinaNinos;
+    private javax.swing.JTextField visitantesPiscinaOlas;
+    private javax.swing.JTextField visitantesTumbonas;
+    private javax.swing.JTextField visitantesVestuarios;
     // End of variables declaration//GEN-END:variables
 }
