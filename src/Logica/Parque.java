@@ -22,7 +22,7 @@ public class Parque {
     private ListaHilos colaEspera;
     private boolean detenido;
 
-    public Parque(ArrayList<Atracciones> listaAtracciones, JTextField colaEsperaTF, boolean detenido, Semaphore semaforo) {
+    public Parque(ArrayList<Atracciones> listaAtracciones, JTextField colaEsperaTF, boolean detenido) {
         this.listaAtracciones = listaAtracciones;
         colaEspera = new ListaHilos(colaEsperaTF);
         this.detenido = detenido;

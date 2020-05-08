@@ -10,7 +10,7 @@ import javax.swing.JTextField;
 
 /**
  *
- * @author alvar
+ * @author alvaro y patricia
  */
 
 /* La clase ListaThreads permite gestionar las listas de threads en los monitores,
