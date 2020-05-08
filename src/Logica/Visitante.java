@@ -7,7 +7,7 @@ package Logica;
 
 /**
  *
- * @author alvar
+ * @author alvaro y patricia
  */
 public class Visitante extends Thread {
 

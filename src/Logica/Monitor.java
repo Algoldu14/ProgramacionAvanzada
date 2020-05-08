@@ -7,7 +7,7 @@ package Logica;
 
 /**
  *
- * @author alvar
+ * @author alvaro y patricia
  */
 public class Monitor extends Thread {
 
@@ -89,7 +89,7 @@ public class Monitor extends Thread {
 
     @Override
     public void run() {
-        while (true) {
+        while (true) {       
         }
     }
 }
