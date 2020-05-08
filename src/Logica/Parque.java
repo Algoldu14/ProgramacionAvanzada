@@ -31,7 +31,6 @@ public class Parque {
     }
 
     public void entrarP(Visitante visitante) {
-
         colaEspera.insertar(visitante);
         try {
             semaforo.acquire();
@@ -77,5 +76,4 @@ public class Parque {
     public void notificar() {
         notifyAll();
     }
-
 }

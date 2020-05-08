@@ -60,9 +60,7 @@ public class Visitante extends Thread {
     @Override
     public void run() {
         try {
-
             parque.entrarP(this); //Entra al parque
-
             while (true) {
 
                 if (this.cansancio >= (5 + (int) (Math.random() * 10))) {//Accede a entre 5 y 15 atracciones

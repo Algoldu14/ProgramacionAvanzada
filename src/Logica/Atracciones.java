@@ -5,6 +5,7 @@
  */
 package Logica;
 
+import static java.lang.Thread.sleep;
 import java.util.concurrent.Semaphore;
 import javax.swing.JTextField;
 
@@ -15,19 +16,19 @@ import javax.swing.JTextField;
 public class Atracciones {
     
     private String nombre;
-    private int aforo, edadMin, edadMax, t_espera;
+    private int aforo, edadMin, edadMax, t_disfrute;
     private Monitor monitor;
     private ListaHilos colaEspera;
     private ListaHilos dentro;
     private Semaphore semaforo;
     private boolean detenido;
     
-    public Atracciones(String nombre, int aforo, int edadMin, int edadMax, int t_espera, JTextField tfEspera, JTextField tfDentro, Monitor monitor, boolean detenido) {
+    public Atracciones(String nombre, int aforo, int edadMin, int edadMax, int t_disfrute, JTextField tfEspera, JTextField tfDentro, Monitor monitor, boolean detenido) {
         this.nombre = nombre;
         this.aforo = aforo;
         this.edadMin = edadMin;
         this.edadMax = edadMax;
-        this.t_espera = t_espera;
+        this.t_disfrute = t_disfrute;
         this.monitor = monitor;
         this.semaforo = new Semaphore(aforo, true);
         this.dentro = new ListaHilos(tfDentro);
@@ -53,8 +54,6 @@ public class Atracciones {
         }
     }
     
-    
-    
     public void salirA(Visitante visitante) {
         dentro.extraer(visitante);
         semaforo.release();
@@ -79,6 +78,14 @@ public class Atracciones {
     public void setAforo(int aforo) {
         this.aforo = aforo;
     }
+
+    public int getT_disfrute() {
+        return t_disfrute;
+    }
+
+    public void setT_disfrute(int t_disfrute) {
+        this.t_disfrute = t_disfrute;
+    }
     
     public synchronized void detener() {
         if (this.detenido == true) {
@@ -90,4 +97,11 @@ public class Atracciones {
         }
     }
     
+    public void tiempoAtraccion() {
+        try{
+            sleep(t_disfrute);
+        } catch(Exception e) {
+            
+        }
+    }
 }
