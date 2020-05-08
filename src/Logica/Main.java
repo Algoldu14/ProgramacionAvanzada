@@ -52,8 +52,5 @@ public class Main {
         listaAtracciones.add(7, toboganC);
         
         Parque parque = new Parque(listaAtracciones,colaEspera,false);
-        
-
     }
-
 }
