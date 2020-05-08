@@ -55,8 +55,6 @@ public class Visitante extends Thread {
         this.edad = edad;
     }
 
-   
-
     @Override
     public void run() {
         try {
@@ -70,12 +68,10 @@ public class Visitante extends Thread {
                 } else { //Si no esta cansado, atracciona
                     Atracciones atraccion = parque.cogerAtraccion();
                     parque.atraccionar(this, atraccion);
-
                 }
-
             }
-
         } catch (Exception e) {
+
         }
     }
 

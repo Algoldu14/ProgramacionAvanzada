@@ -108,4 +108,8 @@ public class Atracciones {
 
         }
     }
+
+    public void monitorTrabaja() {
+        puesto.insertar(monitor);
+    }
 }

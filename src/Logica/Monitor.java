@@ -43,37 +43,37 @@ public class Monitor extends Thread {
                     break;
                 case "Piscina de ninos":
                     sleep((int) (1000 + 500 * Math.random()));
-                    if(atraccion.getAforo() < 15 && visitante.getEdad() <= 11) {
+                    if (atraccion.getAforo() < 15 && visitante.getEdad() <= 11) {
                         tienePermiso = true;
                     }
                     break;
                 case "Piscina grande":
                     sleep((int) (500 * Math.random()));
-                    if(atraccion.getAforo() < 50) {
+                    if (atraccion.getAforo() < 50) {
                         tienePermiso = true;
                     }
                     break;
                 case "Tumbonas":
                     sleep((int) (500 + 400 * Math.random()));
-                    if(atraccion.getAforo() < 20 && visitante.getEdad() >= 15) {
+                    if (atraccion.getAforo() < 20 && visitante.getEdad() >= 15) {
                         tienePermiso = true;
                     }
                     break;
                 case "Tobogan A":
                     sleep((int) (400 + 100 * Math.random()));
-                    if(atraccion.getAforo() <= 1 && 11 <= visitante.getEdad() && visitante.getEdad() <= 14) {
+                    if (atraccion.getAforo() <= 1 && 11 <= visitante.getEdad() && visitante.getEdad() <= 14) {
                         tienePermiso = true;
                     }
                     break;
                 case "Tobogan B":
                     sleep((int) (400 + 100 * Math.random()));
-                    if(atraccion.getAforo() <= 1 && 15 <= visitante.getEdad() && visitante.getEdad() <= 17) {
+                    if (atraccion.getAforo() <= 1 && 15 <= visitante.getEdad() && visitante.getEdad() <= 17) {
                         tienePermiso = true;
                     }
                     break;
                 case "Tobogan C":
                     sleep((int) (400 + 100 * Math.random()));
-                    if(atraccion.getAforo() <= 1 && 18 <= visitante.getEdad()) {
+                    if (atraccion.getAforo() <= 1 && 18 <= visitante.getEdad()) {
                         tienePermiso = true;
                     }
                     break;
@@ -82,14 +82,15 @@ public class Monitor extends Thread {
                     break;
             }
         } catch (InterruptedException e) {
-            
+
         }
         return tienePermiso;
     }
 
     @Override
     public void run() {
-        while (true) {       
+        while (true) {
+            
         }
     }
 }

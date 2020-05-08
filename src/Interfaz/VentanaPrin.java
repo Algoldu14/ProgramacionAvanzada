@@ -5,17 +5,61 @@
  */
 package Interfaz;
 
+import Logica.*;
+import java.util.ArrayList;
+import javax.swing.JTextField;
+
 /**
  *
  * @author 1428491
  */
 public class VentanaPrin extends javax.swing.JFrame {
 
+    Parque parque;
+
     /**
      * Creates new form VentanaPrin
      */
     public VentanaPrin() {
         initComponents();
+
+        ArrayList<Atracciones> listaAtracciones = null;
+        Monitor m1 = new Monitor("ID1");
+        Atracciones vestuario = new Atracciones("Vestuario", 30, 6000, 0, colaVestuarios, visitantesVestuarios, monitorVestuarios, m1, false);
+        m1.start();
+        Monitor m2 = new Monitor("ID2");
+        Atracciones piscina_Olas = new Atracciones("Piscina de olas", 20, 2000, 3000, colaPiscinaOlas, visitantesPiscinaOlas, monitorPiscinaOlas, m2, false);
+        m2.start();
+        Monitor m3 = new Monitor("ID3");
+        Atracciones piscina_Ninos = new Atracciones("Piscina de ninos", 15, 1000, 300, colaPiscinaNinos, visitantesPiscinaNinos, monitorPiscinaNinos, m3, false);
+        m3.start();
+        Monitor m4 = new Monitor("ID4");
+        Atracciones piscina_Grande = new Atracciones("Piscina grande", 50, 3000, 2000, colaPiscinaGran, visitantesPiscinaGran, monitorPiscinaGran, m4, false);
+        m4.start();
+        Monitor m5 = new Monitor("ID5");
+        Atracciones tumbonas = new Atracciones("Tumbonas", 20, 2000, 2000, colaTumbonas, visitantesTumbonas, monitorTumbonas, m5, false);
+        m5.start();
+        Monitor m6 = new Monitor("ID6");
+        Atracciones toboganA = new Atracciones("Tobogan A", 1, 2000, 1000, colaToboganes, visitanteToboganA, monitorToboganA, m6, false);
+        m6.start();
+        Monitor m7 = new Monitor("ID7");
+        Atracciones toboganB = new Atracciones("Tobogan B", 1, 2000, 1000, colaToboganes, visitanteToboganB, monitorToboganB, m7, false);
+        m7.start();
+        Monitor m8 = new Monitor("ID8");
+        Atracciones toboganC = new Atracciones("Tobogan C", 1, 2000, 1000, colaToboganes, visitanteToboganC, monitorToboganC, m8, false);
+        m8.start();
+
+        listaAtracciones.add(vestuario);
+        listaAtracciones.add(piscina_Olas);
+        listaAtracciones.add(piscina_Ninos);
+        listaAtracciones.add(piscina_Grande);
+        listaAtracciones.add(tumbonas);
+        listaAtracciones.add(toboganA);
+        listaAtracciones.add(toboganB);
+        listaAtracciones.add(toboganC);
+
+        Parque parque = new Parque(listaAtracciones, colaParque, false);
+        parque.generarVisitantes();
     }
 
     /**
@@ -702,41 +746,6 @@ public class VentanaPrin extends javax.swing.JFrame {
     private void visitanteToboganCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_visitanteToboganCActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_visitanteToboganCActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VentanaPrin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VentanaPrin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VentanaPrin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VentanaPrin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new VentanaPrin().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField colaParque;
