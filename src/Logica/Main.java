@@ -5,7 +5,7 @@
  */
 package Logica;
 
-import Interfaz.VentanaPrin;
+import Interfaz.*;
 
 /**
  *
@@ -20,5 +20,9 @@ public class Main {
 
         VentanaPrin ventana = new VentanaPrin();
         ventana.setVisible(true);
+
+      
+        
+       
     }
 }

@@ -1,20 +1,22 @@
+package Interfaz;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Interfaz;
+
 
 import Logica.*;
 import java.util.ArrayList;
 
 /**
  *
- * @author 1428491
+ * @author alvaro y patricia
  */
 public class VentanaPrin extends javax.swing.JFrame {
 
-    Parque parque;
+    private Parque parque;
 
     /**
      * Creates new form VentanaPrin
@@ -57,9 +59,11 @@ public class VentanaPrin extends javax.swing.JFrame {
         listaAtracciones.add(toboganB);
         listaAtracciones.add(toboganC);
 
-        parque = new Parque(listaAtracciones, colaParque, false);
-        parque.generarVisitantes();
+        this.parque = new Parque(listaAtracciones, colaParque, false);
+        this.parque.generarVisitantes();
     }
+
+   
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -745,10 +749,8 @@ public class VentanaPrin extends javax.swing.JFrame {
     private void visitanteToboganCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_visitanteToboganCActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_visitanteToboganCActionPerformed
-/**
-     * @param args the command line arguments
-     */
-    
+
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField colaParque;
     private javax.swing.JTextField colaPiscinaGran;
