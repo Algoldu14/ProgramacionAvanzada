@@ -7,7 +7,6 @@ package Interfaz;
 
 import Logica.*;
 import java.util.ArrayList;
-import javax.swing.JTextField;
 
 /**
  *
@@ -23,7 +22,7 @@ public class VentanaPrin extends javax.swing.JFrame {
     public VentanaPrin() {
         initComponents();
 
-        ArrayList<Atracciones> listaAtracciones = null;
+        ArrayList<Atracciones> listaAtracciones = new ArrayList();
         Monitor m1 = new Monitor("ID1");
         Atracciones vestuario = new Atracciones("Vestuario", 30, 6000, 0, colaVestuarios, visitantesVestuarios, monitorVestuarios, m1, false);
         m1.start();
@@ -58,7 +57,7 @@ public class VentanaPrin extends javax.swing.JFrame {
         listaAtracciones.add(toboganB);
         listaAtracciones.add(toboganC);
 
-        Parque parque = new Parque(listaAtracciones, colaParque, false);
+        parque = new Parque(listaAtracciones, colaParque, false);
         parque.generarVisitantes();
     }
 
@@ -746,7 +745,10 @@ public class VentanaPrin extends javax.swing.JFrame {
     private void visitanteToboganCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_visitanteToboganCActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_visitanteToboganCActionPerformed
-
+/**
+     * @param args the command line arguments
+     */
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField colaParque;
     private javax.swing.JTextField colaPiscinaGran;

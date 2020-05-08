@@ -17,7 +17,7 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-       
+
         VentanaPrin ventana = new VentanaPrin();
         ventana.setVisible(true);
     }

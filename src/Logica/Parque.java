@@ -81,7 +81,7 @@ public class Parque {
     public void generarVisitantes() {
         try {
             for (int i = 0; i < 5000; i++) {
-                sleep(400 + (int) (200 * Math.random()));
+                //sleep(400 + (int) (200 * Math.random()));
                 int edad = ((int)(1 + 49 * Math.random()));
                 Visitante visitante = new Visitante(edad, "ID" + i + "-" + edad, this);
                 visitante.run();
