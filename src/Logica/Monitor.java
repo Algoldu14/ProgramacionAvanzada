@@ -35,7 +35,6 @@ public class Monitor extends Thread {
                     if (atraccion.getAforo() < 30) {
                         tienePermiso = true;
                     }
-                    visitante.setTiempoEspera(3000);
                     break;
                 case "Piscina de olas":
                     sleep(1000);

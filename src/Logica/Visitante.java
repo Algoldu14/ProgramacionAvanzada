@@ -15,14 +15,12 @@ public class Visitante extends Thread {
     private String identificacion;
     private Parque parque;
     private int cansancio;
-    private int tiempoEspera;
 
     public Visitante(int edad, String identificacion, Parque parque) {
         this.edad = edad;
         this.identificacion = identificacion;
         this.parque = parque;
         this.cansancio = 0;
-        this.tiempoEspera = 0;
     }
 
     public String getIdentificacion() {
@@ -57,13 +55,7 @@ public class Visitante extends Thread {
         this.edad = edad;
     }
 
-    public int getTiempoEspera() {
-        return tiempoEspera;
-    }
-
-    public void setTiempoEspera(int tiempoEspera) {
-        this.tiempoEspera = tiempoEspera;
-    }
+   
 
     @Override
     public void run() {

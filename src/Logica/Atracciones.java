@@ -53,6 +53,8 @@ public class Atracciones {
         }
     }
     
+    
+    
     public void salirA(Visitante visitante) {
         dentro.extraer(visitante);
         semaforo.release();
