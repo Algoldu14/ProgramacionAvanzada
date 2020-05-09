@@ -37,18 +37,25 @@ public class Parque {
         } catch (InterruptedException e) {
         }
         colaEspera.extraer(visitante);
-        salir(visitante);
-
     }
 
     public void atraccionar(Visitante visitante, Atracciones atraccion) { //Elige la atraccion que quiere ir en el array
+
         atraccion.entrarA(visitante);
         atraccion.salirA(visitante);
     }
 
     public Atracciones cogerAtraccion() { //Coge un elemento aleatorio de las atracciones que no sean los vestuarios
-        int randomNum = new Random().nextInt((listaAtracciones.size() - 1) + 1) + 1;
+        int min = 1;
+        int max = listaAtracciones.size();
+        Random rand = null;
+        int randomNum = rand.nextInt((max - min) + 1) + min;
         return listaAtracciones.get(randomNum);
+    }
+
+    public void entrarVestuario(Visitante visitante) {
+        listaAtracciones.get(0).entrarA(visitante);
+
     }
 
     public void salir(Visitante visitante) {

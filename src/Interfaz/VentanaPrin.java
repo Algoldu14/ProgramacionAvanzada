@@ -25,30 +25,38 @@ public class VentanaPrin extends javax.swing.JFrame {
         initComponents();
 
         ArrayList<Atracciones> listaAtracciones = new ArrayList();
-        Monitor m1 = new Monitor("ID1");
+        Monitor m1 = new Monitor("ID1-50");
         Atracciones vestuario = new Atracciones("Vestuario", 30, 6000, 0, colaVestuarios, visitantesVestuarios, monitorVestuarios, m1, false);
         m1.start();
-        Monitor m2 = new Monitor("ID2");
+        vestuario.monitorTrabaja();
+        Monitor m2 = new Monitor("ID2-30");
         Atracciones piscina_Olas = new Atracciones("Piscina de olas", 20, 2000, 3000, colaPiscinaOlas, visitantesPiscinaOlas, monitorPiscinaOlas, m2, false);
         m2.start();
-        Monitor m3 = new Monitor("ID3");
+        piscina_Olas.monitorTrabaja();
+        Monitor m3 = new Monitor("ID3-20");
         Atracciones piscina_Ninos = new Atracciones("Piscina de ninos", 15, 1000, 300, colaPiscinaNinos, visitantesPiscinaNinos, monitorPiscinaNinos, m3, false);
         m3.start();
-        Monitor m4 = new Monitor("ID4");
+        piscina_Ninos.monitorTrabaja();
+        Monitor m4 = new Monitor("ID4-25");
         Atracciones piscina_Grande = new Atracciones("Piscina grande", 50, 3000, 2000, colaPiscinaGran, visitantesPiscinaGran, monitorPiscinaGran, m4, false);
         m4.start();
-        Monitor m5 = new Monitor("ID5");
+        piscina_Grande.monitorTrabaja();
+        Monitor m5 = new Monitor("ID5-35");
         Atracciones tumbonas = new Atracciones("Tumbonas", 20, 2000, 2000, colaTumbonas, visitantesTumbonas, monitorTumbonas, m5, false);
         m5.start();
-        Monitor m6 = new Monitor("ID6");
+        tumbonas.monitorTrabaja();
+        Monitor m6 = new Monitor("ID6-22");
         Atracciones toboganA = new Atracciones("Tobogan A", 1, 2000, 1000, colaToboganes, visitanteToboganA, monitorToboganA, m6, false);
         m6.start();
-        Monitor m7 = new Monitor("ID7");
+        toboganA.monitorTrabaja();
+        Monitor m7 = new Monitor("ID7-45");
         Atracciones toboganB = new Atracciones("Tobogan B", 1, 2000, 1000, colaToboganes, visitanteToboganB, monitorToboganB, m7, false);
         m7.start();
-        Monitor m8 = new Monitor("ID8");
+        toboganB.monitorTrabaja();
+        Monitor m8 = new Monitor("ID8-40");
         Atracciones toboganC = new Atracciones("Tobogan C", 1, 2000, 1000, colaToboganes, visitanteToboganC, monitorToboganC, m8, false);
         m8.start();
+        toboganC.monitorTrabaja();
 
         listaAtracciones.add(vestuario);
         listaAtracciones.add(piscina_Olas);
@@ -141,7 +149,6 @@ public class VentanaPrin extends javax.swing.JFrame {
         jLabel34 = new javax.swing.JLabel();
         monitorToboganC = new javax.swing.JTextField();
         visitanteToboganC = new javax.swing.JTextField();
-        Empezar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -389,13 +396,6 @@ public class VentanaPrin extends javax.swing.JFrame {
             }
         });
 
-        Empezar.setText("Comenzar");
-        Empezar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EmpezarActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -410,7 +410,7 @@ public class VentanaPrin extends javax.swing.JFrame {
                                     .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel17)
                                     .addComponent(jLabel19))
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                             .addComponent(jLabel30)
@@ -439,9 +439,7 @@ public class VentanaPrin extends javax.swing.JFrame {
                                                 .addGap(6, 6, 6)
                                                 .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(monitorToboganC, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(Empezar))
+                                                .addComponent(monitorToboganC, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(layout.createSequentialGroup()
@@ -451,7 +449,7 @@ public class VentanaPrin extends javax.swing.JFrame {
                                                     .addComponent(visitantesPiscinaGran, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                     .addComponent(colaPiscinaGran, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                             .addGroup(layout.createSequentialGroup()
-                                                .addGap(10, 10, 10)
+                                                .addGap(12, 12, 12)
                                                 .addComponent(visitantesPiscinaNinos, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                         .addGap(25, 25, 25)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -648,22 +646,17 @@ public class VentanaPrin extends javax.swing.JFrame {
                             .addComponent(jLabel27)
                             .addComponent(jLabel28))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel29)
-                                    .addComponent(monitorToboganA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel31)
-                                    .addComponent(monitorToboganB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(visitanteToboganA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel32)
-                                    .addComponent(jLabel30)
-                                    .addComponent(visitanteToboganB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(Empezar)
-                                .addGap(12, 12, 12))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel29)
+                            .addComponent(monitorToboganA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel31)
+                            .addComponent(monitorToboganB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(visitanteToboganA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel32)
+                            .addComponent(jLabel30)
+                            .addComponent(visitanteToboganB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel33)
@@ -774,14 +767,8 @@ public class VentanaPrin extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_visitanteToboganCActionPerformed
 
-    private void EmpezarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmpezarActionPerformed
-        // TODO add your handling code here:
-     
-    }//GEN-LAST:event_EmpezarActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Empezar;
     private javax.swing.JTextField colaParque;
     private javax.swing.JTextField colaPiscinaGran;
     private javax.swing.JTextField colaPiscinaNinos;

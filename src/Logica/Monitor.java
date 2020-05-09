@@ -53,7 +53,7 @@ public class Monitor extends Thread {
                     }
                     break;
                 case "Piscina grande":
-                    this.sleep((int) (500 * Math.random()));
+                    this.sleep(500);
                     if (atraccion.getAforo() < 50) {
                         tienePermiso = true;
                     }

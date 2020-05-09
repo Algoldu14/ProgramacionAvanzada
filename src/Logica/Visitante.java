@@ -15,12 +15,14 @@ public class Visitante extends Thread {
     private String identificacion;
     private Parque parque;
     private int cansancio;
+    private boolean vestido;
 
-    public Visitante(int edad, String identificacion, Parque parque) {
+    public Visitante(int edad, String identificacion, Parque parque, boolean vestido) {
         this.edad = edad;
         this.identificacion = identificacion;
         this.parque = parque;
         this.cansancio = 0;
+        this.vestido = vestido;
     }
 
     public String getIdentificacion() {
@@ -55,6 +57,15 @@ public class Visitante extends Thread {
         this.edad = edad;
     }
 
+    public boolean isVestido() {
+        return vestido;
+    }
+
+    public void setVestido(boolean vestido) {
+        this.vestido = vestido;
+    }
+    
+
     @Override
     public String toString() {
         return identificacion;
@@ -65,14 +76,19 @@ public class Visitante extends Thread {
         try {
             this.parque.entrarP(this); //Entra al parque
             while (true) {
-
                 if (this.cansancio >= (5 + (int) (Math.random() * 10))) {//Accede a entre 5 y 15 atracciones
                     this.parque.salir(this); //Sale del parque
                     break;
 
                 } else { //Si no esta cansado, atracciona
-                    Atracciones atraccion = this.parque.cogerAtraccion();
-                    this.parque.atraccionar(this, atraccion);
+                    if (this.vestido) {
+                        Atracciones atraccion = this.parque.cogerAtraccion();
+                        this.parque.atraccionar(this, atraccion);
+                    } else {
+                        this.parque.entrarVestuario(this); //Va al vestuario
+                        this.setVestido(true);
+                    }
+
                 }
             }
         } catch (Exception e) {

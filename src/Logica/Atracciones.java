@@ -31,9 +31,9 @@ public class Atracciones {
         this.t_disfriteAlea = t_disfriteAlea;
         this.monitor = monitor;
         this.semaforo = new Semaphore(aforo, true);
-        this.dentro = new ListaHilos(tfDentro);
         this.colaEspera = new ListaHilos(tfEspera);
-        this.puesto = new ListaHilos(tfEspera);
+        this.dentro = new ListaHilos(tfDentro);
+        this.puesto = new ListaHilos(puesto);
         this.detenido = detenido;
     }
 
