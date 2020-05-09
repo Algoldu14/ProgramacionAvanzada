@@ -41,7 +41,7 @@ public class ListaHilos {
     public void imprimir() {
         String contenido = "";
         for (int i = 0; i < lista.size(); i++) {
-            contenido = contenido + lista.get(i).getName() + " ";
+            contenido = contenido + lista.get(i).toString() + " ";
         }
         tf.setText(contenido);
     }

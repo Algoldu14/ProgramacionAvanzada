@@ -6,6 +6,7 @@
 package Logica;
 
 import Interfaz.*;
+import static java.lang.Thread.sleep;
 
 /**
  *
@@ -18,11 +19,24 @@ public class Main {
      */
     public static void main(String[] args) {
 
+        generarVisitantes();
+
+    }
+
+    public static void generarVisitantes() {
         VentanaPrin ventana = new VentanaPrin();
         ventana.setVisible(true);
+        try {
+            for (int i = 0; i < 5000; i++) {
+                sleep(400 + (int) (200 * Math.random()));
+                int edad = ((int) (1 + 49 * Math.random()));
+                Visitante visitante = new Visitante(edad, "ID" + i + "-" + edad, ventana.getParque());
+                visitante.run();
+            }
+        } catch (Exception e) {
 
-      
-        
-       
+        }
+
     }
+
 }

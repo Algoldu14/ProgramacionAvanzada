@@ -5,7 +5,6 @@
  */
 package Logica;
 
-import static java.lang.Thread.sleep;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.concurrent.Semaphore;
@@ -47,9 +46,9 @@ public class Parque {
         atraccion.salirA(visitante);
     }
 
-    public Atracciones cogerAtraccion() { //Coge un elemento aleatorio de las atracciones
-        int random = new Random().nextInt(listaAtracciones.size());
-        return listaAtracciones.get(random);
+    public Atracciones cogerAtraccion() { //Coge un elemento aleatorio de las atracciones que no sean los vestuarios
+        int randomNum = new Random().nextInt((listaAtracciones.size() - 1) + 1) + 1;
+        return listaAtracciones.get(randomNum);
     }
 
     public void salir(Visitante visitante) {
@@ -78,16 +77,4 @@ public class Parque {
         notifyAll();
     }
 
-    public void generarVisitantes() {
-        try {
-            for (int i = 0; i < 5000; i++) {
-                //sleep(400 + (int) (200 * Math.random()));
-                int edad = ((int)(1 + 49 * Math.random()));
-                Visitante visitante = new Visitante(edad, "ID" + i + "-" + edad, this);
-                visitante.run();
-            }
-        } catch (Exception e) {
-
-        }
-    }
 }

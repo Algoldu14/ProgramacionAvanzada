@@ -25,12 +25,17 @@ public class Monitor extends Thread {
         this.identificación = identificación;
     }
 
+    @Override
+    public String toString() {
+        return identificación;
+    }
+
     public boolean directrices(Visitante visitante, Atracciones atraccion) {
         boolean tienePermiso = false;
         try {
             switch (atraccion.getNombre()) {
                 case "Vestuario":
-                     this.sleep(1000);
+                    this.sleep(1000);
                     if (atraccion.getAforo() < 30) {
                         tienePermiso = true;
                     }
@@ -48,7 +53,7 @@ public class Monitor extends Thread {
                     }
                     break;
                 case "Piscina grande":
-                   this.sleep((int) (500 * Math.random()));
+                    this.sleep((int) (500 * Math.random()));
                     if (atraccion.getAforo() < 50) {
                         tienePermiso = true;
                     }
@@ -90,7 +95,7 @@ public class Monitor extends Thread {
     @Override
     public void run() {
         while (true) {
-            
+
         }
     }
 }
