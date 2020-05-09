@@ -16,27 +16,26 @@ import javax.swing.JTextField;
  */
 public class Parque {
 
-    private int maxVisitiantes = 100;
     private ArrayList<Atracciones> listaAtracciones;
     private Semaphore semaforo;
     private ListaHilos colaEspera;
     private boolean detenido;
 
-    public Parque(ArrayList<Atracciones> listaAtracciones, JTextField colaEsperaTF, boolean detenido) {
+    public Parque(ArrayList<Atracciones> listaAtracciones, JTextField colaEsperaP, boolean detenido) {
         this.listaAtracciones = listaAtracciones;
-        colaEspera = new ListaHilos(colaEsperaTF);
+        colaEspera = new ListaHilos(colaEsperaP);
         this.detenido = detenido;
-        this.semaforo = new Semaphore(maxVisitiantes, true);
+        this.semaforo = new Semaphore(100, true);
 
     }
 
     public void entrarP(Visitante visitante) {
-        colaEspera.insertar(visitante);
+        this.colaEspera.insertar(visitante);
         try {
-            semaforo.acquire();
+            this.semaforo.acquire();
         } catch (InterruptedException e) {
         }
-        colaEspera.extraer(visitante);
+        this.colaEspera.extraer(visitante);
     }
 
     public void atraccionar(Visitante visitante, Atracciones atraccion) { //Elige la atraccion que quiere ir en el array

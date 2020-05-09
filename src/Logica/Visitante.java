@@ -79,7 +79,6 @@ public class Visitante extends Thread {
                 if (this.cansancio >= (5 + (int) (Math.random() * 10))) {//Accede a entre 5 y 15 atracciones
                     this.parque.salir(this); //Sale del parque
                     break;
-
                 } else { //Si no esta cansado, atracciona
                     if (this.vestido) {
                         Atracciones atraccion = this.parque.cogerAtraccion();

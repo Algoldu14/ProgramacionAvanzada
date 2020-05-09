@@ -32,7 +32,7 @@ public class Atracciones {
         this.t_disfriteAlea = t_disfriteAlea;
         this.monitor = monitor;
         this.semaforo = new Semaphore(aforo, true);
-        this.semaforoMoni = new Semaphore (1,true);
+        this.semaforoMoni = new Semaphore(1, true);
         this.colaEspera = new ListaHilos(tfEspera);
         this.dentro = new ListaHilos(tfDentro);
         this.puesto = new ListaHilos(puesto);

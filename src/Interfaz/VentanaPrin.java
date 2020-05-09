@@ -5,8 +5,6 @@ package Interfaz;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
-
 import Logica.*;
 import java.util.ArrayList;
 
@@ -66,10 +64,10 @@ public class VentanaPrin extends javax.swing.JFrame {
         listaAtracciones.add(toboganA);
         listaAtracciones.add(toboganB);
         listaAtracciones.add(toboganC);
-
+       
         Parque parque = new Parque(listaAtracciones, colaParque, false);
         this.setParque(parque);
-        
+
     }
 
     public Parque getParque() {
@@ -79,8 +77,6 @@ public class VentanaPrin extends javax.swing.JFrame {
     public void setParque(Parque parque) {
         this.parque = parque;
     }
-
-   
 
     /**
      * This method is called from within the constructor to initialize the form.
