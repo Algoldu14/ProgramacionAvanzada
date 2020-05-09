@@ -26,6 +26,7 @@ public class Main {
     public static void generarVisitantes() throws InterruptedException {
         VentanaPrin ventana = new VentanaPrin();
         ventana.setVisible(true);
+       
         for (int i = 0; i < 5000; i++) {
             sleep(400 + (int) (200 * Math.random()));
             int edad = ((int) (1 + 49 * Math.random()));

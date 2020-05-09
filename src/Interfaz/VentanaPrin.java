@@ -6,7 +6,12 @@ package Interfaz;
  * and open the template in the editor.
  */
 import Logica.*;
+import java.net.MalformedURLException;
+import java.rmi.AlreadyBoundException;
+import java.rmi.RemoteException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -74,6 +79,16 @@ public class VentanaPrin extends javax.swing.JFrame {
 
         Parque parque = new Parque(listaAtracciones, colaParque, false);
         this.setParque(parque);
+        
+        try {
+            Servidor server = new Servidor(parque);
+        } catch (AlreadyBoundException ex) {
+            Logger.getLogger(VentanaPrin.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (MalformedURLException ex) {
+            Logger.getLogger(VentanaPrin.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (RemoteException ex) {
+            Logger.getLogger(VentanaPrin.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
     }
 

@@ -117,6 +117,24 @@ public class Atracciones {
         }
     }
 
+    public ListaHilos getColaEspera() {
+        return colaEspera;
+    }
+
+    public void setColaEspera(ListaHilos colaEspera) {
+        this.colaEspera = colaEspera;
+    }
+
+    public ListaHilos getDentro() {
+        return dentro;
+    }
+
+    public void setDentro(ListaHilos dentro) {
+        this.dentro = dentro;
+    }
+    
+    
+
     public void tiempoAtraccion() {
         try {
             sleep((int) (t_disfrute + Math.random() * t_disfriteAlea));

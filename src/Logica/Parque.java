@@ -19,16 +19,22 @@ public class Parque {
     private Semaphore semaforo;
     private ListaHilos colaEspera;
     private boolean detenido;
+    private int menores;
 
     public Parque(ArrayList<Atracciones> listaAtracciones, JTextField colaEsperaP, boolean detenido) {
         this.listaAtracciones = listaAtracciones;
         colaEspera = new ListaHilos(colaEsperaP);
         this.detenido = detenido;
         this.semaforo = new Semaphore(100, true);
+        this.menores = 0;
     }
 
     public void entrarP(Visitante visitante) throws InterruptedException {
         this.colaEspera.insertar(visitante);
+        if (visitante.getEdad() < 18) {
+            menores++;
+
+        }
         try {
             this.semaforo.acquire();
         } catch (InterruptedException e) {
@@ -82,6 +88,61 @@ public class Parque {
 
             }
         }
+    }
+
+    public String[] buscarUbicacion(String id) {
+        String[] parametros = new String[]{"Not found", "Not found"};
+        for (int i = 0; i < listaAtracciones.size(); i++) {
+            if (listaAtracciones.get(i).getColaEspera().getLista().contains(id)) {
+                parametros[0] = listaAtracciones.get(i).getNombre();
+                parametros[1] = listaAtracciones.get(i).getColaEspera().getLista().get(this.getPosicion(listaAtracciones.get(i).getColaEspera().getLista(), id)).toString();
+            }
+            if (listaAtracciones.get(i).getDentro().getLista().contains(id)) {
+                parametros[0] = listaAtracciones.get(i).getNombre();
+                parametros[1] = listaAtracciones.get(i).getColaEspera().getLista().get(this.getPosicion(listaAtracciones.get(i).getDentro().getLista(), id)).toString();
+            }
+
+        }
+        return parametros;
+    }
+
+    public int getPosicion(ArrayList<Thread> lista, String visitante) {
+        for (int i = 0; i < lista.size(); i++) {
+            Visitante v = (Visitante) lista.get(i);
+            if (v.getIdentificacion().equals(visitante)) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    public int getMenores() {
+        return menores;
+    }
+
+    public String[] mirarToboganes() {
+        String[] parametros = new String[]{"Nadie", "Nadie", "Nadie"};
+        if (!listaAtracciones.get(5).getDentro().getLista().isEmpty()) {
+            parametros[0] = listaAtracciones.get(5).getDentro().getLista().get(0).toString();
+        }
+        if (!listaAtracciones.get(6).getDentro().getLista().isEmpty()) {
+            parametros[1] = listaAtracciones.get(6).getDentro().getLista().get(0).toString();
+        }
+        if (!listaAtracciones.get(5).getDentro().getLista().isEmpty()) {
+            parametros[2] = listaAtracciones.get(7).getDentro().getLista().get(0).toString();
+        }
+
+        return parametros;
+    }
+
+    public String[] mirarAforos() {
+        String[] parametros = new String[]{"", "", "", "", "", "", "", "", ""};
+        for (int i = 0; i < listaAtracciones.size(); i++) {
+            parametros[i] = Integer.toString(listaAtracciones.get(i).getDentro().getLista().size());
+        }
+        parametros[8] = Integer.toString(listaAtracciones.get(5).getDentro().getLista().size()
+                + listaAtracciones.get(6).getDentro().getLista().size() + listaAtracciones.get(7).getDentro().getLista().size());
+        return parametros;
     }
 
     public void notificar() {
