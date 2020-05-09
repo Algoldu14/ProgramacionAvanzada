@@ -54,6 +54,14 @@ public class Parque {
         listaAtracciones.get(0).entrarA(visitante);
     }
 
+    public ArrayList<Atracciones> getListaAtracciones() {
+        return listaAtracciones;
+    }
+
+    public void setListaAtracciones(ArrayList<Atracciones> listaAtracciones) {
+        this.listaAtracciones = listaAtracciones;
+    }
+
     public void salirP(Visitante visitante) {
         semaforo.release();
     }

@@ -38,7 +38,6 @@ public class Atracciones {
     }
 
     public void entrarA(Visitante visitante) {
-
         colaEspera.insertar(visitante);
 
         try {
@@ -47,21 +46,37 @@ public class Atracciones {
             if (this.monitor.directrices(visitante, this.getNombre())) {
                 //System.out.println("Entro en la atraccion" + visitante.getIdentificacion());
                 dentro.insertar(visitante);
+                //System.out.println(this.getNombre() + "-" + dentro.getLista().size());
                 this.tiempoAtraccion();
                 this.salirA(visitante);
                 visitante.setCansancio(visitante.getCansancio() + 1);
                 //System.out.println("Salgo de la atraccion " + visitante.getIdentificacion());
             } else {
-                semaforo.release();
+                //semaforo.release();
                 colaEspera.extraer(visitante);
             }
         } catch (InterruptedException e) {
+        } finally {
+            semaforo.release();
         }
     }
 
     public void salirA(Visitante visitante) {
         dentro.extraer(visitante);
-        semaforo.release();
+        if (this.getNombre().equals("Tobogan A") || this.getNombre().equals("Tobogan B") || this.getNombre().equals("Tobogan C")) {
+            visitante.getParque().atraccionar(visitante, 3); //Entra directamente en la piscina si viene del tobogan
+        }
+    }
+
+    public void sacarAleatoriamente() {
+        if (!dentro.getLista().isEmpty()) {
+            int num = ((int) (dentro.getLista().size() * Math.random()));
+            Visitante visitanteS = (Visitante) dentro.getLista().get(num);
+            System.out.println("El monitor de la piscina grande va a sacar a: " + visitanteS.getIdentificacion());
+            this.salirA(visitanteS);
+            semaforo.release();
+        }
+
     }
 
     public String getNombre() {

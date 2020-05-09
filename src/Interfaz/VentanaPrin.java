@@ -21,38 +21,45 @@ public class VentanaPrin extends javax.swing.JFrame {
      */
     public VentanaPrin() {
         initComponents();
-
         ArrayList<Atracciones> listaAtracciones = new ArrayList();
         Monitor m1 = new Monitor("ID1-50");
-        Atracciones vestuario = new Atracciones("Vestuario", 30, 3000, 0, colaVestuarios, visitantesVestuarios, monitorVestuarios, m1, false);
+        Atracciones vestuario = new Atracciones("Vestuario", 30, 3000, 0, colaVestuarios, visitantesVestuarios, monitorVestuarios, m1, false); //30
+        m1.setAtraccion(vestuario);
         m1.start();
         vestuario.monitorTrabaja();
         Monitor m2 = new Monitor("ID2-30");
-        Atracciones piscina_Olas = new Atracciones("Piscina de olas", 20, 2000, 3000, colaPiscinaOlas, visitantesPiscinaOlas, monitorPiscinaOlas, m2, false);
+        Atracciones piscina_Olas = new Atracciones("Piscina de olas", 20, 2000, 3000, colaPiscinaOlas, visitantesPiscinaOlas, monitorPiscinaOlas, m2, false); //20
+        m2.setAtraccion(piscina_Olas);
         m2.start();
         piscina_Olas.monitorTrabaja();
         Monitor m3 = new Monitor("ID3-20");
-        Atracciones piscina_Ninos = new Atracciones("Piscina de ninos", 15, 1000, 300, colaPiscinaNinos, visitantesPiscinaNinos, monitorPiscinaNinos, m3, false);
+        Atracciones piscina_Ninos = new Atracciones("Piscina de ninos", 15, 1000, 300, colaPiscinaNinos, visitantesPiscinaNinos, monitorPiscinaNinos, m3, false);//15
+        m3.setAtraccion(piscina_Ninos);
         m3.start();
         piscina_Ninos.monitorTrabaja();
         Monitor m4 = new Monitor("ID4-25");
-        Atracciones piscina_Grande = new Atracciones("Piscina grande", 50, 3000, 2000, colaPiscinaGran, visitantesPiscinaGran, monitorPiscinaGran, m4, false);
+        Atracciones piscina_Grande = new Atracciones("Piscina grande", 50, 3000, 2000, colaPiscinaGran, visitantesPiscinaGran, monitorPiscinaGran, m4, false);//50
+        m4.setAtraccion(piscina_Grande);
         m4.start();
         piscina_Grande.monitorTrabaja();
         Monitor m5 = new Monitor("ID5-35");
-        Atracciones tumbonas = new Atracciones("Tumbonas", 20, 2000, 2000, colaTumbonas, visitantesTumbonas, monitorTumbonas, m5, false);
+        Atracciones tumbonas = new Atracciones("Tumbonas", 50, 2000, 2000, colaTumbonas, visitantesTumbonas, monitorTumbonas, m5, false);//20
+        m5.setAtraccion(tumbonas);
         m5.start();
         tumbonas.monitorTrabaja();
         Monitor m6 = new Monitor("ID6-22");
-        Atracciones toboganA = new Atracciones("Tobogan A", 1, 2000, 1000, colaToboganes, visitanteToboganA, monitorToboganA, m6, false);
+        Atracciones toboganA = new Atracciones("Tobogan A", 1, 2000, 1000, colaToboganes1, visitanteToboganA, monitorToboganA, m6, false);
+        m6.setAtraccion(toboganA);
         m6.start();
         toboganA.monitorTrabaja();
         Monitor m7 = new Monitor("ID7-45");
-        Atracciones toboganB = new Atracciones("Tobogan B", 1, 2000, 1000, colaToboganes, visitanteToboganB, monitorToboganB, m7, false);
+        Atracciones toboganB = new Atracciones("Tobogan B", 1, 2000, 1000, colaToboganes2, visitanteToboganB, monitorToboganB, m7, false);
+        m7.setAtraccion(toboganB);
         m7.start();
         toboganB.monitorTrabaja();
         Monitor m8 = new Monitor("ID8-40");
-        Atracciones toboganC = new Atracciones("Tobogan C", 1, 2000, 1000, colaToboganes, visitanteToboganC, monitorToboganC, m8, false);
+        Atracciones toboganC = new Atracciones("Tobogan C", 1, 2000, 1000, colaToboganes3, visitanteToboganC, monitorToboganC, m8, false);
+        m8.setAtraccion(toboganC);
         m8.start();
         toboganC.monitorTrabaja();
 
@@ -64,7 +71,7 @@ public class VentanaPrin extends javax.swing.JFrame {
         listaAtracciones.add(toboganA);
         listaAtracciones.add(toboganB);
         listaAtracciones.add(toboganC);
-       
+
         Parque parque = new Parque(listaAtracciones, colaParque, false);
         this.setParque(parque);
 
@@ -129,7 +136,7 @@ public class VentanaPrin extends javax.swing.JFrame {
         visitantesTumbonas = new javax.swing.JTextField();
         jLabel24 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
-        colaToboganes = new javax.swing.JTextField();
+        colaToboganes1 = new javax.swing.JTextField();
         jLabel26 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
@@ -145,6 +152,8 @@ public class VentanaPrin extends javax.swing.JFrame {
         jLabel34 = new javax.swing.JLabel();
         monitorToboganC = new javax.swing.JTextField();
         visitanteToboganC = new javax.swing.JTextField();
+        colaToboganes2 = new javax.swing.JTextField();
+        colaToboganes3 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -323,12 +332,12 @@ public class VentanaPrin extends javax.swing.JFrame {
         jLabel24.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel24.setText("TOBOGANES");
 
-        jLabel25.setText("Cola de entrada:");
+        jLabel25.setText("Colas de entrada:");
 
-        colaToboganes.setEditable(false);
-        colaToboganes.addActionListener(new java.awt.event.ActionListener() {
+        colaToboganes1.setEditable(false);
+        colaToboganes1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                colaToboganesActionPerformed(evt);
+                colaToboganes1ActionPerformed(evt);
             }
         });
 
@@ -392,50 +401,67 @@ public class VentanaPrin extends javax.swing.JFrame {
             }
         });
 
+        colaToboganes2.setEditable(false);
+        colaToboganes2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                colaToboganes2ActionPerformed(evt);
+            }
+        });
+
+        colaToboganes3.setEditable(false);
+        colaToboganes3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                colaToboganes3ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(21, 21, 21)
+                                .addComponent(jLabel25))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(320, 320, 320)
+                                .addComponent(jLabel2))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(379, 379, 379)
+                                .addComponent(jLabel3))
+                            .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jLabel1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(colaParque, javax.swing.GroupLayout.PREFERRED_SIZE, 735, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(366, 366, 366)
+                                .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel6))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(monitorVestuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(0, 0, Short.MAX_VALUE))
+                                    .addComponent(colaVestuarios)
+                                    .addComponent(visitantesVestuarios)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel17)
                                     .addComponent(jLabel19))
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jLabel30)
-                                            .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(monitorToboganA, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(visitanteToboganA, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(84, 84, 84)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addGap(6, 6, 6)
-                                                .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addComponent(jLabel32))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(monitorToboganB)
-                                            .addComponent(visitanteToboganB, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(36, 36, 36)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                                .addComponent(jLabel34)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(visitanteToboganC, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addGap(6, 6, 6)
-                                                .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(monitorToboganC, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(layout.createSequentialGroup()
@@ -482,7 +508,56 @@ public class VentanaPrin extends javax.swing.JFrame {
                                                     .addGroup(layout.createSequentialGroup()
                                                         .addGap(90, 90, 90)
                                                         .addComponent(jLabel8)))
-                                                .addGap(165, 165, 165))))))
+                                                .addGap(165, 165, 165))))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                    .addComponent(jLabel30)
+                                                    .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addGroup(layout.createSequentialGroup()
+                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                            .addComponent(monitorToboganA, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                            .addComponent(visitanteToboganA, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                        .addGap(84, 84, 84)
+                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                            .addGroup(layout.createSequentialGroup()
+                                                                .addGap(6, 6, 6)
+                                                                .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                            .addComponent(jLabel32)))
+                                                    .addComponent(jLabel26))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(jLabel27)
+                                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                        .addComponent(monitorToboganB)
+                                                        .addComponent(visitanteToboganB, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGap(50, 50, 50)
+                                                .addComponent(colaToboganes1, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(colaToboganes2, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(82, 82, 82)))
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                        .addComponent(jLabel34)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                        .addComponent(visitanteToboganC, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                        .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                            .addComponent(jLabel28)
+                                                            .addComponent(monitorToboganC, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                                .addGap(46, 46, 46))
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                .addComponent(colaToboganes3, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(33, 33, 33))))))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(73, 73, 73)
                                 .addComponent(jLabel16))
@@ -502,47 +577,7 @@ public class VentanaPrin extends javax.swing.JFrame {
                                     .addComponent(monitorPiscinaNinos, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(68, 68, 68)
-                                .addComponent(jLabel7))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(320, 320, 320)
-                        .addComponent(jLabel2))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(379, 379, 379)
-                        .addComponent(jLabel3))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(366, 366, 366)
-                        .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel6))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(monitorVestuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(colaVestuarios)
-                            .addComponent(visitantesVestuarios)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(colaParque, javax.swing.GroupLayout.PREFERRED_SIZE, 735, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(141, 141, 141)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel26)
-                                .addGap(177, 177, 177)
-                                .addComponent(jLabel27)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel28))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel25)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(colaToboganes, javax.swing.GroupLayout.PREFERRED_SIZE, 447, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(jLabel7)))))
                 .addContainerGap(34, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -635,7 +670,9 @@ public class VentanaPrin extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel25)
-                            .addComponent(colaToboganes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(colaToboganes1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(colaToboganes2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(colaToboganes3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel26)
@@ -735,9 +772,9 @@ public class VentanaPrin extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_visitantesTumbonasActionPerformed
 
-    private void colaToboganesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_colaToboganesActionPerformed
+    private void colaToboganes1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_colaToboganes1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_colaToboganesActionPerformed
+    }//GEN-LAST:event_colaToboganes1ActionPerformed
 
     private void monitorToboganAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_monitorToboganAActionPerformed
         // TODO add your handling code here:
@@ -763,13 +800,23 @@ public class VentanaPrin extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_visitanteToboganCActionPerformed
 
+    private void colaToboganes2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_colaToboganes2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_colaToboganes2ActionPerformed
+
+    private void colaToboganes3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_colaToboganes3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_colaToboganes3ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField colaParque;
     private javax.swing.JTextField colaPiscinaGran;
     private javax.swing.JTextField colaPiscinaNinos;
     private javax.swing.JTextField colaPiscinaOlas;
-    private javax.swing.JTextField colaToboganes;
+    private javax.swing.JTextField colaToboganes1;
+    private javax.swing.JTextField colaToboganes2;
+    private javax.swing.JTextField colaToboganes3;
     private javax.swing.JTextField colaTumbonas;
     private javax.swing.JTextField colaVestuarios;
     private javax.swing.JTextField esperaAdultosPiscinaNinos;
