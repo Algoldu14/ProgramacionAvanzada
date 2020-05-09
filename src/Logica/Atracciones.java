@@ -22,7 +22,6 @@ public class Atracciones {
     private ListaHilos dentro;
     private ListaHilos puesto;
     private Semaphore semaforo;
-    private Semaphore semaforoMoni;
     private boolean detenido;
 
     public Atracciones(String nombre, int aforo, int t_disfrute, int t_disfruteAlea, JTextField tfEspera, JTextField tfDentro, JTextField puesto, Monitor monitor, boolean detenido) {
@@ -32,7 +31,6 @@ public class Atracciones {
         this.t_disfriteAlea = t_disfriteAlea;
         this.monitor = monitor;
         this.semaforo = new Semaphore(aforo, true);
-        this.semaforoMoni = new Semaphore(1, true);
         this.colaEspera = new ListaHilos(tfEspera);
         this.dentro = new ListaHilos(tfDentro);
         this.puesto = new ListaHilos(puesto);
@@ -45,18 +43,18 @@ public class Atracciones {
 
         try {
             semaforo.acquire();
-            visitante.setCansancio(visitante.getCansancio() + 1);
             colaEspera.extraer(visitante);
-            this.semaforoMoni.acquire();
-            if (this.monitor.directrices(visitante, this)) {
+            if (this.monitor.directrices(visitante, this.getNombre())) {
+                //System.out.println("Entro en la atraccion" + visitante.getIdentificacion());
                 dentro.insertar(visitante);
                 this.tiempoAtraccion();
                 this.salirA(visitante);
+                visitante.setCansancio(visitante.getCansancio() + 1);
+                //System.out.println("Salgo de la atraccion " + visitante.getIdentificacion());
             } else {
                 semaforo.release();
                 colaEspera.extraer(visitante);
             }
-            this.semaforoMoni.release();
         } catch (InterruptedException e) {
         }
     }

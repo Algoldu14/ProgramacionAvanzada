@@ -24,7 +24,7 @@ public class VentanaPrin extends javax.swing.JFrame {
 
         ArrayList<Atracciones> listaAtracciones = new ArrayList();
         Monitor m1 = new Monitor("ID1-50");
-        Atracciones vestuario = new Atracciones("Vestuario", 30, 6000, 0, colaVestuarios, visitantesVestuarios, monitorVestuarios, m1, false);
+        Atracciones vestuario = new Atracciones("Vestuario", 30, 3000, 0, colaVestuarios, visitantesVestuarios, monitorVestuarios, m1, false);
         m1.start();
         vestuario.monitorTrabaja();
         Monitor m2 = new Monitor("ID2-30");

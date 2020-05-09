@@ -30,10 +30,10 @@ public class Monitor extends Thread {
         return identificación;
     }
 
-    public boolean directrices(Visitante visitante, Atracciones atraccion) {
+    public boolean directrices(Visitante visitante, String atraccion) {
         boolean tienePermiso = false;
         try {
-            switch (atraccion.getNombre()) {
+            switch (atraccion) {
                 case "Vestuario":
                     this.sleep(1000);
                     tienePermiso = true;

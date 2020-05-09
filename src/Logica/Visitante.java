@@ -64,7 +64,6 @@ public class Visitante extends Thread {
     public void setVestido(boolean vestido) {
         this.vestido = vestido;
     }
-    
 
     @Override
     public String toString() {
@@ -77,15 +76,18 @@ public class Visitante extends Thread {
             this.parque.entrarP(this); //Entra al parque
             while (true) {
                 if (this.cansancio >= (5 + (int) (Math.random() * 10))) {//Accede a entre 5 y 15 atracciones
-                    this.parque.salir(this); //Sale del parque
+                    this.parque.salirP(this); //Sale del parque
                     break;
                 } else { //Si no esta cansado, atracciona
-                    if (this.vestido) {
-                        Atracciones atraccion = this.parque.cogerAtraccion();
-                        this.parque.atraccionar(this, atraccion);
+                    if (vestido) {
+                        //System.out.println("Busca atraccion" + this.identificacion);
+                        int nAtraccion = this.parque.cogerAtraccion(); //Coge una atraccion
+                        //System.out.println("Entro en la atraccion" + nAtraccion + "este man" + this.identificacion);
+                        this.parque.atraccionar(this, nAtraccion); //Entra en ella
                     } else {
                         this.parque.entrarVestuario(this); //Va al vestuario
-                        this.setVestido(true);
+                        this.vestido = true;
+                        //System.out.println("Sale del vestuario" + this.identificacion);
                     }
 
                 }

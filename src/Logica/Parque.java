@@ -6,7 +6,6 @@
 package Logica;
 
 import java.util.ArrayList;
-import java.util.Random;
 import java.util.concurrent.Semaphore;
 import javax.swing.JTextField;
 
@@ -26,38 +25,36 @@ public class Parque {
         colaEspera = new ListaHilos(colaEsperaP);
         this.detenido = detenido;
         this.semaforo = new Semaphore(100, true);
-
     }
 
-    public void entrarP(Visitante visitante) {
+    public void entrarP(Visitante visitante) throws InterruptedException {
         this.colaEspera.insertar(visitante);
         try {
             this.semaforo.acquire();
         } catch (InterruptedException e) {
         }
+        visitante.sleep(1000);
         this.colaEspera.extraer(visitante);
     }
 
-    public void atraccionar(Visitante visitante, Atracciones atraccion) { //Elige la atraccion que quiere ir en el array
-
-        atraccion.entrarA(visitante);
-        atraccion.salirA(visitante);
+    public void atraccionar(Visitante visitante, int atraccion) { //Elige la atraccion que quiere ir en el array
+        listaAtracciones.get(atraccion).entrarA(visitante);
+        listaAtracciones.get(atraccion).salirA(visitante);
     }
 
-    public Atracciones cogerAtraccion() { //Coge un elemento aleatorio de las atracciones que no sean los vestuarios
+    public int cogerAtraccion() { //Coge un elemento aleatorio de las atracciones que no sean los vestuarios
         int min = 1;
         int max = listaAtracciones.size();
-        Random rand = null;
-        int randomNum = rand.nextInt((max - min) + 1) + min;
-        return listaAtracciones.get(randomNum);
+        int num = ((int) (max * Math.random()) + min);
+        //System.out.println(num);
+        return num;
     }
 
     public void entrarVestuario(Visitante visitante) {
         listaAtracciones.get(0).entrarA(visitante);
-
     }
 
-    public void salir(Visitante visitante) {
+    public void salirP(Visitante visitante) {
         semaforo.release();
     }
 
