@@ -24,8 +24,8 @@ public class ListaHilos {
     private JTextField tf;
 
     public ListaHilos(JTextField tf) {
-        lista = new ArrayList<Thread>();
         this.tf = tf;
+        lista = new ArrayList<>(); 
     }
 
     public synchronized void insertar(Thread t) {
