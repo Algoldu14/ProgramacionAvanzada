@@ -105,7 +105,7 @@
                           <Component id="vestuario" alignment="1" max="32767" attributes="0"/>
                           <Component id="piscinaGrande" alignment="0" max="32767" attributes="0"/>
                           <Component id="piscinaOlas" alignment="0" max="32767" attributes="0"/>
-                          <Component id="piscinaNiños" max="32767" attributes="0"/>
+                          <Component id="piscinaNinos" max="32767" attributes="0"/>
                           <Component id="aforoToboganes" alignment="0" max="32767" attributes="0"/>
                           <Component id="tumbonas" max="32767" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
@@ -169,7 +169,7 @@
                                       </Group>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="piscinaNiños" min="-2" max="-2" attributes="0"/>
+                                      <Component id="piscinaNinos" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Component id="piscinaGrande" min="-2" max="-2" attributes="0"/>
                                   </Group>
@@ -330,12 +330,12 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="piscinaOlasActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="piscinaNi&#xf1;os">
+    <Component class="javax.swing.JTextField" name="piscinaNinos">
       <Properties>
         <Property name="editable" type="boolean" value="false"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="piscinaNi&#xf1;osActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="piscinaNinosActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="piscinaGrande">

@@ -64,7 +64,7 @@ public class InterfazRemota extends javax.swing.JFrame {
         vestuario = new javax.swing.JTextField();
         botonAforo = new javax.swing.JButton();
         piscinaOlas = new javax.swing.JTextField();
-        piscinaNiños = new javax.swing.JTextField();
+        piscinaNinos = new javax.swing.JTextField();
         piscinaGrande = new javax.swing.JTextField();
         aforoToboganes = new javax.swing.JTextField();
         tumbonas = new javax.swing.JTextField();
@@ -174,10 +174,10 @@ public class InterfazRemota extends javax.swing.JFrame {
             }
         });
 
-        piscinaNiños.setEditable(false);
-        piscinaNiños.addActionListener(new java.awt.event.ActionListener() {
+        piscinaNinos.setEditable(false);
+        piscinaNinos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                piscinaNiñosActionPerformed(evt);
+                piscinaNinosActionPerformed(evt);
             }
         });
 
@@ -254,7 +254,7 @@ public class InterfazRemota extends javax.swing.JFrame {
                             .addComponent(vestuario, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(piscinaGrande)
                             .addComponent(piscinaOlas)
-                            .addComponent(piscinaNiños)
+                            .addComponent(piscinaNinos)
                             .addComponent(aforoToboganes)
                             .addComponent(tumbonas)
                             .addGroup(layout.createSequentialGroup()
@@ -305,7 +305,7 @@ public class InterfazRemota extends javax.swing.JFrame {
                                                 .addGap(12, 12, 12)
                                                 .addComponent(tumbonas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(piscinaNiños, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(piscinaNinos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
                                         .addComponent(piscinaGrande, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -387,9 +387,9 @@ public class InterfazRemota extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_vestuarioActionPerformed
 
-    private void piscinaNiñosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_piscinaNiñosActionPerformed
+    private void piscinaNinosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_piscinaNinosActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_piscinaNiñosActionPerformed
+    }//GEN-LAST:event_piscinaNinosActionPerformed
 
     private void piscinaGrandeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_piscinaGrandeActionPerformed
         // TODO add your handling code here:
@@ -409,7 +409,7 @@ public class InterfazRemota extends javax.swing.JFrame {
             String[] parametros = interfazVigilancia.usuariosZona();
             vestuario.setText(parametros[0]);
             piscinaOlas.setText(parametros[1]);
-            piscinaNiños.setText(parametros[2]);
+            piscinaNinos.setText(parametros[2]);
             piscinaGrande.setText(parametros[3]);
             tumbonas.setText(parametros[4]);
             aforoToboganes.setText(parametros[8]);
@@ -498,7 +498,7 @@ public class InterfazRemota extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JTextField piscinaGrande;
-    private javax.swing.JTextField piscinaNiños;
+    private javax.swing.JTextField piscinaNinos;
     private javax.swing.JTextField piscinaOlas;
     private javax.swing.JTextField tobogan1;
     private javax.swing.JTextField tobogan2;
