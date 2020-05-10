@@ -23,14 +23,21 @@ import java.rmi.server.UnicastRemoteObject;
 public class Servidor extends UnicastRemoteObject implements InterfazVigilancia {
 
     private final Parque parque;
-
-    public Servidor(Parque parque) throws AlreadyBoundException, MalformedURLException, RemoteException {
+    private Paso paso;  
+    
+    public Servidor(Parque parque, Paso paso) throws AlreadyBoundException, MalformedURLException, RemoteException {
         this.parque = parque;
+        this.paso = paso;
         LocateRegistry.createRegistry(1099);
         Naming.bind("//localhost/ModuloDeControl", this);
         System.out.println("El controlador ha quedado registrado");
     }
 
+    @Override
+    public void alternar() throws RemoteException {
+        paso.alternon();
+    }    
+    
     @Override
     public String[] controlUbicacion(String id) throws RemoteException {
         return parque.buscarUbicacion(id);

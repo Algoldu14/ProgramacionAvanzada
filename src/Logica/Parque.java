@@ -20,31 +20,43 @@ public class Parque {
     private ListaHilos colaEspera;
     private boolean detenido;
     private int menores;
+    private Paso paso;
 
-    public Parque(ArrayList<Atracciones> listaAtracciones, JTextField colaEsperaP, boolean detenido) {
+    public Parque(ArrayList<Atracciones> listaAtracciones, JTextField colaEsperaP, boolean detenido, Paso paso) {
         this.listaAtracciones = listaAtracciones;
         colaEspera = new ListaHilos(colaEsperaP);
         this.detenido = detenido;
         this.semaforo = new Semaphore(100, true);
         this.menores = 0;
+        this.paso = paso;
     }
 
     public void entrarP(Visitante visitante) throws InterruptedException {
+        paso.miron();
         this.colaEspera.insertar(visitante);
+        paso.miron();
         if (visitante.getEdad() < 18) {
             menores++;
         }
         try {
+            paso.miron();
             this.semaforo.acquire();
         } catch (InterruptedException e) {
+            
         }
+        paso.miron();
         visitante.sleep(1000);
+        paso.miron();
         this.colaEspera.extraer(visitante);
+        paso.miron();
     }
 
     public void atraccionar(Visitante visitante, int atraccion) { //Elige la atraccion que quiere ir en el array
+        paso.miron();
         listaAtracciones.get(atraccion).entrarA(visitante);
+        paso.miron();
         listaAtracciones.get(atraccion).salirA(visitante);
+        paso.miron();
     }
 
     public int cogerAtraccion() { //Coge un elemento aleatorio de las atracciones que no sean los vestuarios
@@ -68,7 +80,9 @@ public class Parque {
     }
 
     public void salirP(Visitante visitante) {
+        paso.miron();
         semaforo.release();
+        paso.miron();
     }
 
     public boolean isDetenido() {
@@ -100,7 +114,6 @@ public class Parque {
                 parametros[0] = listaAtracciones.get(i).getNombre();
                 parametros[1] = listaAtracciones.get(i).getColaEspera().getLista().get(this.getPosicion(listaAtracciones.get(i).getDentro().getLista(), id)).toString();
             }
-
         }
         return parametros;
     }
@@ -144,7 +157,7 @@ public class Parque {
         return parametros;
     }
 
-    public void notificar() {
+    public synchronized void notificar() {
         notifyAll();
     }
 

@@ -16,11 +16,12 @@ public class Monitor extends Thread {
     private String identificación;
     private Atracciones atraccion;
     private Semaphore semaforo;
+    private Paso paso;
 
-    public Monitor(String identificación) {
+    public Monitor(String identificación, Paso paso) {
         this.identificación = identificación;
-        this.semaforo = new Semaphore (1,true);
-
+        this.semaforo = new Semaphore(1, true);
+        this.paso = paso;
     }
 
     public String getIdentificación() {
@@ -48,6 +49,7 @@ public class Monitor extends Thread {
         boolean tienePermiso = false;
         try {
             semaforo.acquire();
+            paso.miron();
             switch (atraccion) {
                 case "Vestuario":
                     sleep(1000);
@@ -99,10 +101,18 @@ public class Monitor extends Thread {
             }
         } catch (InterruptedException e) {
 
-        }finally{
+        } finally {
             semaforo.release();
         }
         return tienePermiso;
+    }
+
+    public synchronized void detenerseM() {
+        try {
+            wait();
+        } catch (Exception e) {
+
+        }
     }
 
     @Override
@@ -111,10 +121,12 @@ public class Monitor extends Thread {
             while (true) {
                 if (getAtraccion().getNombre().equals("Piscina grande")) { //saca aleatoriamente cada 10 sec a un visitante
                     this.atraccion.sacarAleatoriamente();
-                    sleep(10000); 
+                    paso.miron();
+                    sleep(10000);
                 }
             }
         } catch (InterruptedException e) {
+
         }
     }
 }

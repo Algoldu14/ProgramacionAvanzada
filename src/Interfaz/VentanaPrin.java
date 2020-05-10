@@ -20,50 +20,52 @@ import java.util.logging.Logger;
 public class VentanaPrin extends javax.swing.JFrame {
 
     private Parque parque;
+    private Paso paso;
 
     /**
      * Creates new form VentanaPrin
      */
     public VentanaPrin() {
         initComponents();
+        paso = new Paso(botonParar); 
         ArrayList<Atracciones> listaAtracciones = new ArrayList();
-        Monitor m1 = new Monitor("ID1-50");
-        Atracciones vestuario = new Atracciones("Vestuario", 30, 3000, 0, colaVestuarios, visitantesVestuarios, monitorVestuarios, m1, false); //30
+        Monitor m1 = new Monitor("ID1-50", paso);
+        Atracciones vestuario = new Atracciones("Vestuario", 30, 3000, 0, colaVestuarios, visitantesVestuarios, monitorVestuarios, m1, false, paso); //30
         m1.setAtraccion(vestuario);
         m1.start();
         vestuario.monitorTrabaja();
-        Monitor m2 = new Monitor("ID2-30");
-        Atracciones piscina_Olas = new Atracciones("Piscina de olas", 20, 2000, 3000, colaPiscinaOlas, visitantesPiscinaOlas, monitorPiscinaOlas, m2, false); //20
+        Monitor m2 = new Monitor("ID2-30", paso);
+        Atracciones piscina_Olas = new Atracciones("Piscina de olas", 20, 2000, 3000, colaPiscinaOlas, visitantesPiscinaOlas, monitorPiscinaOlas, m2, false, paso); //20
         m2.setAtraccion(piscina_Olas);
         m2.start();
         piscina_Olas.monitorTrabaja();
-        Monitor m3 = new Monitor("ID3-20");
-        Atracciones piscina_Ninos = new Atracciones("Piscina de ninos", 15, 1000, 300, colaPiscinaNinos, visitantesPiscinaNinos, monitorPiscinaNinos, m3, false);//15
+        Monitor m3 = new Monitor("ID3-20", paso);
+        Atracciones piscina_Ninos = new Atracciones("Piscina de ninos", 15, 1000, 300, colaPiscinaNinos, visitantesPiscinaNinos, monitorPiscinaNinos, m3, false, paso);//15
         m3.setAtraccion(piscina_Ninos);
         m3.start();
         piscina_Ninos.monitorTrabaja();
-        Monitor m4 = new Monitor("ID4-25");
-        Atracciones piscina_Grande = new Atracciones("Piscina grande", 50, 3000, 2000, colaPiscinaGran, visitantesPiscinaGran, monitorPiscinaGran, m4, false);//50
+        Monitor m4 = new Monitor("ID4-25", paso);
+        Atracciones piscina_Grande = new Atracciones("Piscina grande", 50, 3000, 2000, colaPiscinaGran, visitantesPiscinaGran, monitorPiscinaGran, m4, false, paso);//50
         m4.setAtraccion(piscina_Grande);
         m4.start();
         piscina_Grande.monitorTrabaja();
-        Monitor m5 = new Monitor("ID5-35");
-        Atracciones tumbonas = new Atracciones("Tumbonas", 50, 2000, 2000, colaTumbonas, visitantesTumbonas, monitorTumbonas, m5, false);//20
+        Monitor m5 = new Monitor("ID5-35", paso);
+        Atracciones tumbonas = new Atracciones("Tumbonas", 50, 2000, 2000, colaTumbonas, visitantesTumbonas, monitorTumbonas, m5, false, paso);//20
         m5.setAtraccion(tumbonas);
         m5.start();
         tumbonas.monitorTrabaja();
-        Monitor m6 = new Monitor("ID6-22");
-        Atracciones toboganA = new Atracciones("Tobogan A", 1, 2000, 1000, colaToboganes1, visitanteToboganA, monitorToboganA, m6, false);
+        Monitor m6 = new Monitor("ID6-22", paso);
+        Atracciones toboganA = new Atracciones("Tobogan A", 1, 2000, 1000, colaToboganes1, visitanteToboganA, monitorToboganA, m6, false, paso);
         m6.setAtraccion(toboganA);
         m6.start();
         toboganA.monitorTrabaja();
-        Monitor m7 = new Monitor("ID7-45");
-        Atracciones toboganB = new Atracciones("Tobogan B", 1, 2000, 1000, colaToboganes2, visitanteToboganB, monitorToboganB, m7, false);
+        Monitor m7 = new Monitor("ID7-45", paso);
+        Atracciones toboganB = new Atracciones("Tobogan B", 1, 2000, 1000, colaToboganes2, visitanteToboganB, monitorToboganB, m7, false, paso);
         m7.setAtraccion(toboganB);
         m7.start();
         toboganB.monitorTrabaja();
-        Monitor m8 = new Monitor("ID8-40");
-        Atracciones toboganC = new Atracciones("Tobogan C", 1, 2000, 1000, colaToboganes3, visitanteToboganC, monitorToboganC, m8, false);
+        Monitor m8 = new Monitor("ID8-40", paso);
+        Atracciones toboganC = new Atracciones("Tobogan C", 1, 2000, 1000, colaToboganes3, visitanteToboganC, monitorToboganC, m8, false, paso);
         m8.setAtraccion(toboganC);
         m8.start();
         toboganC.monitorTrabaja();
@@ -77,11 +79,13 @@ public class VentanaPrin extends javax.swing.JFrame {
         listaAtracciones.add(toboganB);
         listaAtracciones.add(toboganC);
 
-        Parque parque = new Parque(listaAtracciones, colaParque, false);
+        Parque parque = new Parque(listaAtracciones, colaParque, false, paso);
+        CreadorVisitantes creador = new CreadorVisitantes(paso, parque);
+        creador.start();
         this.setParque(parque);
-        
+
         try {
-            Servidor server = new Servidor(parque);
+            Servidor server = new Servidor(parque, paso);
         } catch (AlreadyBoundException ex) {
             Logger.getLogger(VentanaPrin.class.getName()).log(Level.SEVERE, null, ex);
         } catch (MalformedURLException ex) {
@@ -89,7 +93,6 @@ public class VentanaPrin extends javax.swing.JFrame {
         } catch (RemoteException ex) {
             Logger.getLogger(VentanaPrin.class.getName()).log(Level.SEVERE, null, ex);
         }
-
     }
 
     public Parque getParque() {
@@ -170,7 +173,6 @@ public class VentanaPrin extends javax.swing.JFrame {
         colaToboganes2 = new javax.swing.JTextField();
         colaToboganes3 = new javax.swing.JTextField();
         botonParar = new javax.swing.JButton();
-        botonReanudar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -439,13 +441,6 @@ public class VentanaPrin extends javax.swing.JFrame {
             }
         });
 
-        botonReanudar.setText("Reanudar");
-        botonReanudar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonReanudarActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -544,8 +539,7 @@ public class VentanaPrin extends javax.swing.JFrame {
                                                     .addComponent(jLabel27)
                                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                                         .addComponent(monitorToboganB)
-                                                        .addComponent(visitanteToboganB, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                                        .addComponent(visitanteToboganB, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                             .addGroup(layout.createSequentialGroup()
                                                 .addGap(50, 50, 50)
                                                 .addComponent(colaToboganes1, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -558,7 +552,6 @@ public class VentanaPrin extends javax.swing.JFrame {
                                                 .addComponent(colaToboganes3, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGap(33, 33, 33))
                                             .addGroup(layout.createSequentialGroup()
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                                     .addGroup(layout.createSequentialGroup()
                                                         .addComponent(jLabel34)
@@ -615,9 +608,7 @@ public class VentanaPrin extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(botonParar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(botonReanudar)
-                .addGap(20, 20, 20))
+                .addGap(22, 22, 22))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -737,11 +728,9 @@ public class VentanaPrin extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel34)
                             .addComponent(visitanteToboganC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(botonParar)
-                    .addComponent(botonReanudar))
-                .addContainerGap(13, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
+                .addComponent(botonParar)
+                .addGap(16, 16, 16))
         );
 
         pack();
@@ -853,20 +842,13 @@ public class VentanaPrin extends javax.swing.JFrame {
 
     private void botonPararActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonPararActionPerformed
         // TODO add your handling code here:
-        this.parque.setDetenido(true);
-        this.parque.parar();
+        //this.parque.setDetenido(true);
+        paso.alternon();
     }//GEN-LAST:event_botonPararActionPerformed
-
-    private void botonReanudarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonReanudarActionPerformed
-        // TODO add your handling code here:
-        this.parque.notificar();
-        this.parque.setDetenido(false);
-    }//GEN-LAST:event_botonReanudarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonParar;
-    private javax.swing.JButton botonReanudar;
     private javax.swing.JTextField colaParque;
     private javax.swing.JTextField colaPiscinaGran;
     private javax.swing.JTextField colaPiscinaNinos;

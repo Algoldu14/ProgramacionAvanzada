@@ -5,6 +5,9 @@
  */
 package Logica;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author alvaro y patricia
@@ -16,13 +19,15 @@ public class Visitante extends Thread {
     private Parque parque;
     private int cansancio;
     private boolean vestido;
+    private Paso paso;
 
-    public Visitante(int edad, String identificacion, Parque parque, boolean vestido) {
+    public Visitante(int edad, String identificacion, Parque parque, boolean vestido, Paso paso) {
         this.edad = edad;
         this.identificacion = identificacion;
         this.parque = parque;
         this.cansancio = 0;
         this.vestido = vestido;
+        this.paso = paso;
     }
 
     public String getIdentificacion() {
@@ -70,31 +75,46 @@ public class Visitante extends Thread {
         return identificacion;
     }
 
+    public synchronized void detenerseV() {
+        try {
+            wait();
+        } catch (Exception e) {
+
+        }
+    }
+
     @Override
     public void run() {
         try {
+            paso.miron();
             this.parque.entrarP(this); //Entra al parque
             while (true) {
+                paso.miron();
                 if (this.cansancio >= (5 + (int) (Math.random() * 10))) {//Accede a entre 5 y 15 atracciones
+                    paso.miron();
                     this.parque.salirP(this); //Sale del parque
+                    paso.miron();
                     break;
                 } else { //Si no esta cansado, atracciona
+                    paso.miron();
                     if (vestido) {
+                        paso.miron();
                         //System.out.println("Busca atraccion" + this.identificacion);
                         int nAtraccion = this.parque.cogerAtraccion(); //Coge una atraccion
                         //System.out.println("Entro en la atraccion" + nAtraccion + "este man" + this.identificacion);
                         this.parque.atraccionar(this, nAtraccion); //Entra en ella
+                        paso.miron();
                     } else {
+                        paso.miron();
                         this.parque.entrarVestuario(this); //Va al vestuario
                         this.vestido = true;
                         //System.out.println("Sale del vestuario" + this.identificacion);
+                        paso.miron();
                     }
-
                 }
             }
         } catch (Exception e) {
 
         }
     }
-
 }

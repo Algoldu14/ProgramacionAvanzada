@@ -49,62 +49,73 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="idABuscar" alignment="0" max="32767" attributes="0"/>
-                  <Component id="atraccionID" alignment="0" max="32767" attributes="0"/>
-                  <Component id="cansancio" alignment="0" max="32767" attributes="0"/>
-                  <Component id="BuscarID" max="32767" attributes="0"/>
-                  <Component id="jLabel1" max="32767" attributes="0"/>
-              </Group>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="91" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="cantidadMenores" alignment="0" max="32767" attributes="0"/>
-                          <Component id="controlMenores" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="tobogan1" alignment="0" max="32767" attributes="0"/>
-                          <Component id="tobogan2" alignment="0" max="32767" attributes="0"/>
-                          <Component id="tobogan3" alignment="0" max="32767" attributes="0"/>
-                          <Component id="toboganes" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace pref="67" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="botonParar" max="32767" attributes="0"/>
+                  <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel7" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel6" alignment="1" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="116" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="109" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="149" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="idABuscar" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="atraccionID" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="cansancio" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="BuscarID" max="32767" attributes="0"/>
+                                  <Component id="jLabel1" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="91" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="cantidadMenores" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="controlMenores" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="tobogan1" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="tobogan2" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="tobogan3" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="toboganes" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace pref="118" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="148" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="150" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="botonAforo" pref="127" max="32767" attributes="0"/>
+                          <Component id="vestuario" alignment="1" max="32767" attributes="0"/>
+                          <Component id="piscinaGrande" alignment="0" max="32767" attributes="0"/>
+                          <Component id="piscinaOlas" alignment="0" max="32767" attributes="0"/>
+                          <Component id="piscinaNiños" max="32767" attributes="0"/>
+                          <Component id="aforoToboganes" alignment="0" max="32767" attributes="0"/>
+                          <Component id="tumbonas" max="32767" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                              <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
               </Group>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="botonAforo" pref="127" max="32767" attributes="0"/>
-                  <Component id="vestuario" alignment="1" max="32767" attributes="0"/>
-                  <Component id="piscinaGrande" alignment="0" max="32767" attributes="0"/>
-                  <Component id="piscinaOlas" alignment="0" max="32767" attributes="0"/>
-                  <Component id="piscinaNiños" max="32767" attributes="0"/>
-                  <Component id="aforoToboganes" alignment="0" max="32767" attributes="0"/>
-                  <Component id="tumbonas" max="32767" attributes="0"/>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                      <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
-              <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -131,9 +142,9 @@
                           </Group>
                           <Group type="102" attributes="0">
                               <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                               <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="piscinaOlas" alignment="1" min="-2" max="-2" attributes="0"/>
                                   <Component id="tobogan1" min="-2" max="-2" attributes="0"/>
@@ -163,14 +174,14 @@
                                       <Component id="piscinaGrande" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="7" max="32767" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
                               <Component id="aforoToboganes" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="botonAforo" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="toboganes" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="controlMenores" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="BuscarID" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="botonAforo" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -182,7 +193,9 @@
                       <Component id="vestuario" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="32" max="32767" attributes="0"/>
+              <EmptySpace pref="38" max="32767" attributes="0"/>
+              <Component id="botonParar" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -345,6 +358,14 @@
       <Properties>
         <Property name="editable" type="boolean" value="false"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="botonParar">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="PARAR"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonPararActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

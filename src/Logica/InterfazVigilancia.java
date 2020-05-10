@@ -22,6 +22,6 @@ public interface InterfazVigilancia extends Remote {
 
     public String[] usuariosZona() throws RemoteException;
 
-   
+    public void alternar() throws RemoteException;
 
 }

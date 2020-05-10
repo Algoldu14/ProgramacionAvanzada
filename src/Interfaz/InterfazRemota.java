@@ -6,6 +6,7 @@
 package Interfaz;
 
 import Logica.*;
+import java.awt.Color;
 import java.net.MalformedURLException;
 import java.rmi.*;
 import java.util.logging.Level;
@@ -17,7 +18,8 @@ import java.util.logging.Logger;
  */
 public class InterfazRemota extends javax.swing.JFrame {
 
-    InterfazVigilancia interfazVigilancia;
+    private InterfazVigilancia interfazVigilancia;
+    private boolean parado = false;
 
     /**
      * Creates new form InterfazRemota
@@ -25,6 +27,7 @@ public class InterfazRemota extends javax.swing.JFrame {
     public InterfazRemota() throws NotBoundException, MalformedURLException, RemoteException {
         initComponents();
         interfazVigilancia = (InterfazVigilancia) Naming.lookup("//localhost/ModuloDeControl");
+        botonParar.setBackground(Color.red);
     }
 
     /**
@@ -65,6 +68,7 @@ public class InterfazRemota extends javax.swing.JFrame {
         piscinaGrande = new javax.swing.JTextField();
         aforoToboganes = new javax.swing.JTextField();
         tumbonas = new javax.swing.JTextField();
+        botonParar = new javax.swing.JButton();
 
         jLabel3.setText("Control de Menores");
 
@@ -193,56 +197,70 @@ public class InterfazRemota extends javax.swing.JFrame {
 
         tumbonas.setEditable(false);
 
+        botonParar.setText("PARAR");
+        botonParar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonPararActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(32, 32, 32)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(idABuscar)
-                    .addComponent(atraccionID)
-                    .addComponent(cansancio)
-                    .addComponent(BuscarID, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(botonParar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(91, 91, 91)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(cantidadMenores)
-                            .addComponent(controlMenores, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel2))
-                        .addGap(83, 83, 83)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(tobogan1)
-                            .addComponent(tobogan2)
-                            .addComponent(tobogan3)
-                            .addComponent(toboganes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel4))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING))
-                                .addGap(116, 116, 116))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
                                 .addComponent(jLabel5)
-                                .addGap(109, 109, 109)))))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(botonAforo, javax.swing.GroupLayout.DEFAULT_SIZE, 127, Short.MAX_VALUE)
-                    .addComponent(vestuario, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(piscinaGrande)
-                    .addComponent(piscinaOlas)
-                    .addComponent(piscinaNiños)
-                    .addComponent(aforoToboganes)
-                    .addComponent(tumbonas)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(15, 15, 15)
-                        .addComponent(jLabel8)))
-                .addGap(70, 70, 70))
+                                .addGap(149, 149, 149))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(idABuscar)
+                                    .addComponent(atraccionID)
+                                    .addComponent(cansancio)
+                                    .addComponent(BuscarID, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(91, 91, 91)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(cantidadMenores)
+                                            .addComponent(controlMenores, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(jLabel2))
+                                        .addGap(83, 83, 83)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(tobogan1)
+                                            .addComponent(tobogan2)
+                                            .addComponent(tobogan3)
+                                            .addComponent(toboganes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(jLabel4))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 118, Short.MAX_VALUE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                .addComponent(jLabel7)
+                                                .addGap(148, 148, 148))
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                .addComponent(jLabel6)
+                                                .addGap(150, 150, 150)))))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(botonAforo, javax.swing.GroupLayout.DEFAULT_SIZE, 127, Short.MAX_VALUE)
+                            .addComponent(vestuario, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(piscinaGrande)
+                            .addComponent(piscinaOlas)
+                            .addComponent(piscinaNiños)
+                            .addComponent(aforoToboganes)
+                            .addComponent(tumbonas)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(15, 15, 15)
+                                .addComponent(jLabel8)))))
+                .addGap(27, 27, 27))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -265,9 +283,9 @@ public class InterfazRemota extends javax.swing.JFrame {
                                 .addComponent(cansancio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel4)
-                                .addGap(18, 18, 18)
+                                .addGap(19, 19, 19)
                                 .addComponent(jLabel5)
-                                .addGap(7, 7, 7)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(piscinaOlas, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(tobogan1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -290,20 +308,22 @@ public class InterfazRemota extends javax.swing.JFrame {
                                         .addComponent(piscinaNiños, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
                                         .addComponent(piscinaGrande, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(aforoToboganes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(botonAforo)
                                     .addComponent(toboganes)
                                     .addComponent(controlMenores)
-                                    .addComponent(BuscarID)
-                                    .addComponent(botonAforo)))))
+                                    .addComponent(BuscarID)))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(12, 12, 12)
                         .addComponent(jLabel8)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(vestuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                .addComponent(botonParar)
+                .addGap(22, 22, 22))
         );
 
         pack();
@@ -321,7 +341,7 @@ public class InterfazRemota extends javax.swing.JFrame {
     }//GEN-LAST:event_BuscarIDActionPerformed
 
     private void idABuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idABuscarActionPerformed
-        
+
     }//GEN-LAST:event_idABuscarActionPerformed
 
     private void controlMenoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_controlMenoresActionPerformed
@@ -331,7 +351,7 @@ public class InterfazRemota extends javax.swing.JFrame {
         } catch (RemoteException ex) {
             Logger.getLogger(InterfazRemota.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
     }//GEN-LAST:event_controlMenoresActionPerformed
 
     private void cantidadMenoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cantidadMenoresActionPerformed
@@ -393,13 +413,30 @@ public class InterfazRemota extends javax.swing.JFrame {
             piscinaGrande.setText(parametros[3]);
             tumbonas.setText(parametros[4]);
             aforoToboganes.setText(parametros[8]);
-            
         } catch (RemoteException ex) {
             Logger.getLogger(InterfazRemota.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
     }//GEN-LAST:event_botonAforoActionPerformed
-/**
+
+    private void botonPararActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonPararActionPerformed
+        try {
+            if (!parado) {
+                parado = true;
+                interfazVigilancia.alternar();
+                botonParar.setText("RENAUDAR");
+                botonParar.setBackground(Color.green);
+            } else {
+                parado = false;
+                interfazVigilancia.alternar();
+                botonParar.setText("PARAR");
+                botonParar.setBackground(Color.red);
+            }
+        } catch (Exception e) {
+
+        }
+    }//GEN-LAST:event_botonPararActionPerformed
+    /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
@@ -445,6 +482,7 @@ public class InterfazRemota extends javax.swing.JFrame {
     private javax.swing.JTextField atraccionID;
     private javax.swing.JTextField atraccionID1;
     private javax.swing.JButton botonAforo;
+    private javax.swing.JButton botonParar;
     private javax.swing.JTextField cansancio;
     private javax.swing.JTextField cansancio1;
     private javax.swing.JTextField cantidadMenores;
