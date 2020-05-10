@@ -39,7 +39,6 @@ public class Atracciones {
 
     public void entrarA(Visitante visitante) {
         colaEspera.insertar(visitante);
-
         try {
             semaforo.acquire();
             colaEspera.extraer(visitante);
@@ -132,8 +131,6 @@ public class Atracciones {
     public void setDentro(ListaHilos dentro) {
         this.dentro = dentro;
     }
-    
-    
 
     public void tiempoAtraccion() {
         try {

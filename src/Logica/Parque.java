@@ -33,7 +33,6 @@ public class Parque {
         this.colaEspera.insertar(visitante);
         if (visitante.getEdad() < 18) {
             menores++;
-
         }
         try {
             this.semaforo.acquire();
@@ -123,13 +122,13 @@ public class Parque {
     public String[] mirarToboganes() {
         String[] parametros = new String[]{"Nadie", "Nadie", "Nadie"};
         if (!listaAtracciones.get(5).getDentro().getLista().isEmpty()) {
-            parametros[0] = listaAtracciones.get(5).getDentro().getLista().get(0).toString();
+            parametros[0] = listaAtracciones.get(5).getDentro().getLista().get(0).toString(); //Tobogan A
         }
         if (!listaAtracciones.get(6).getDentro().getLista().isEmpty()) {
-            parametros[1] = listaAtracciones.get(6).getDentro().getLista().get(0).toString();
+            parametros[1] = listaAtracciones.get(6).getDentro().getLista().get(0).toString(); //Tobogan B
         }
         if (!listaAtracciones.get(5).getDentro().getLista().isEmpty()) {
-            parametros[2] = listaAtracciones.get(7).getDentro().getLista().get(0).toString();
+            parametros[2] = listaAtracciones.get(7).getDentro().getLista().get(0).toString(); //Tobogan C
         }
 
         return parametros;

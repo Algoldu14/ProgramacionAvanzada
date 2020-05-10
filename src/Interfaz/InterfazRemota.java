@@ -13,7 +13,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author alvar
+ * @author alvaro y patricia
  */
 public class InterfazRemota extends javax.swing.JFrame {
 
@@ -268,9 +268,9 @@ public class InterfazRemota extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(jLabel5)
                                 .addGap(7, 7, 7)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(tobogan1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(piscinaOlas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(piscinaOlas, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(tobogan1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
@@ -349,7 +349,7 @@ public class InterfazRemota extends javax.swing.JFrame {
     private void toboganesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toboganesActionPerformed
         try {
             // TODO add your handling code here:
-            String[] parametros = interfazVigilancia.controltoboganes();
+            String[] parametros = interfazVigilancia.controlToboganes();
             tobogan1.setText(parametros[0]);
             tobogan2.setText(parametros[1]);
             tobogan3.setText(parametros[2]);

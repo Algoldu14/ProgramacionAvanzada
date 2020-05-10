@@ -10,7 +10,7 @@ import java.rmi.RemoteException;
 
 /**
  *
- * @author alvar
+ * @author alvaro y patricia
  */
 public interface InterfazVigilancia extends Remote {
 
@@ -18,7 +18,7 @@ public interface InterfazVigilancia extends Remote {
 
     public String buscarMenores() throws RemoteException;
 
-    public String[] controltoboganes() throws RemoteException;
+    public String[] controlToboganes() throws RemoteException;
 
     public String[] usuariosZona() throws RemoteException;
 

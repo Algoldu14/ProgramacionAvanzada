@@ -18,7 +18,7 @@ import java.rmi.server.UnicastRemoteObject;
 
 /**
  *
- * @author luismiguelvillanueva
+ * @author alvaro y patricia
  */
 public class Servidor extends UnicastRemoteObject implements InterfazVigilancia {
 
@@ -42,7 +42,7 @@ public class Servidor extends UnicastRemoteObject implements InterfazVigilancia 
     }
 
     @Override
-    public String[] controltoboganes() throws RemoteException {
+    public String[] controlToboganes() throws RemoteException {
         return parque.mirarToboganes();
     }
 
