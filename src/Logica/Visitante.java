@@ -5,9 +5,6 @@
  */
 package Logica;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 /**
  *
  * @author alvaro y patricia

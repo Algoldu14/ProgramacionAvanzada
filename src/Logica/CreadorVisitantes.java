@@ -10,7 +10,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author 1428491
+ * @author alvaro y patricia
  */
 public class CreadorVisitantes extends Thread {
 

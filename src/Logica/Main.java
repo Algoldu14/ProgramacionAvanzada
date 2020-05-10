@@ -6,7 +6,6 @@
 package Logica;
 
 import Interfaz.*;
-import static java.lang.Thread.sleep;
 
 /**
  *

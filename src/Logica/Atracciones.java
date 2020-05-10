@@ -38,7 +38,7 @@ public class Atracciones {
         this.detenido = detenido;
         this.paso = paso;
     }
-    
+
     public String getNombre() {
         return nombre;
     }
@@ -66,7 +66,7 @@ public class Atracciones {
     public void setT_disfrute(int t_disfrute) {
         this.t_disfrute = t_disfrute;
     }
-    
+
     public ListaHilos getColaEspera() {
         return colaEspera;
     }
@@ -113,17 +113,35 @@ public class Atracciones {
         }
     }
 
-    public void salirA(Visitante visitante) {
+    public void salirA(Visitante visitante) throws InterruptedException {
         paso.miron();
         dentro.extraer(visitante);
         paso.miron();
         if (this.getNombre().equals("Tobogan A") || this.getNombre().equals("Tobogan B") || this.getNombre().equals("Tobogan C")) {
             paso.miron();
-            visitante.getParque().atraccionar(visitante, 3); //Entra directamente en la piscina si viene del tobogan
+            this.pasarToboganAPiscina(visitante);
         }
     }
 
-    public void sacarAleatoriamente() {
+    public void pasarToboganAPiscina(Visitante visitante) throws InterruptedException {
+
+        visitante.getParque().getListaAtracciones().get(3).getSemaforo().acquire();
+        paso.miron();
+        visitante.getParque().getListaAtracciones().get(3).getDentro().insertar(visitante);
+        paso.miron();
+        visitante.getParque().getListaAtracciones().get(3).tiempoAtraccion();
+        paso.miron();
+        visitante.getParque().getListaAtracciones().get(3).salirA(visitante);
+        paso.miron();
+        visitante.getParque().getListaAtracciones().get(3).getSemaforo().release();
+
+    }
+
+    public Semaphore getSemaforo() {
+        return this.semaforo;
+    }
+
+    public void sacarAleatoriamente() throws InterruptedException {
         paso.miron();
         if (!dentro.getLista().isEmpty()) {
             paso.miron();

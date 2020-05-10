@@ -51,7 +51,7 @@ public class Parque {
         paso.miron();
     }
 
-    public void atraccionar(Visitante visitante, int atraccion) { //Elige la atraccion que quiere ir en el array
+    public void atraccionar(Visitante visitante, int atraccion) throws InterruptedException { //Elige la atraccion que quiere ir en el array
         paso.miron();
         listaAtracciones.get(atraccion).entrarA(visitante);
         paso.miron();
